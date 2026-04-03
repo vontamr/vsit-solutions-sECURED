@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VSIT Security Assessment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="container">
+  <h1>Free Business Security Assessment</h1>
+  <p>Find out if your company is at risk in under 60 seconds.</p>
+
+  <form action="https://formspree.io/f/xqegypwk" method="POST">
+
+    <!-- BUSINESS INFO -->
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Business Email" required>
+    <input type="text" name="company" placeholder="Company Name" required>
+
+    <!-- QUALIFYING QUESTIONS -->
+    <label>How many employees/devices?</label>
+    <select name="size">
+      <option>1-5</option>
+      <option>6-20</option>
+      <option>21-50</option>
+      <option>50+</option>
+    </select>
+
+    <label>Do you currently have IT support?</label>
+    <select name="it_support">
+      <option>No</option>
+      <option>Yes - In-house</option>
+      <option>Yes - Outsourced</option>
+    </select>
+
+    <label>Are your devices monitored 24/7?</label>
+    <select name="monitoring">
+      <option>No</option>
+      <option>Yes</option>
+    </select>
+
+    <label>Do you restrict what software employees can install?</label>
+    <select name="software_control">
+      <option>No</option>
+      <option>Yes</option>
+    </select>
+
+    <label>How often are your systems updated?</label>
+    <select name="updates">
+      <option>Rarely</option>
+      <option>Sometimes</option>
+      <option>Regularly</option>
+    </select>
+
+    <label>Do you have protection against ransomware?</label>
+    <select name="ransomware">
+      <option>No</option>
+      <option>Not sure</option>
+      <option>Yes</option>
+    </select>
+
+    <label>Do employees access sensitive data remotely?</label>
+    <select name="remote_access">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <!-- HIDDEN FIELDS -->
+    <input type="hidden" name="_subject" value="🔥 New VSIT Security Assessment Lead">
+    <input type="hidden" name="_template" value="table">
+
+    <!-- OPTIONAL REDIRECT (CREATE THIS PAGE NEXT) -->
+    <!-- <input type="hidden" name="_redirect" value="https://vontamr.github.io/vsit-solutions-sECURED/thank-you.html"> -->
+
+    <button class="btn">Get My Risk Results</button>
+
+  </form>
+</section>
+
+</body>
+</html>
