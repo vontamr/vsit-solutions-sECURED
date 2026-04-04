@@ -1,0 +1,63 @@
+body {
+    background: #0b0b12;
+    color: white;
+    font-family: Arial;
+    margin: 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #222;
+  }
+  
+  a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero span {
+    color: #7c3aed;
+  }
+  
+  .btn {
+    background: #7c3aed;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .btn-outline {
+    border: 1px solid #7c3aed;
+    padding: 12px 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .card {
+    background: #12121a;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+  }
