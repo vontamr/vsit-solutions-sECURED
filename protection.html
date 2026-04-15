@@ -1,46 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Protection | VSIT</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protection | VSIT Secured</title>
+    <meta name="description" content="Zero Trust Protection plans powered by ThreatLocker - Application Control, Data Protection, and more.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        function initTailwind() {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            cyber: { black: '#0a0a0a', green: '#10b981' }
+                        }
+                    }
+                }
+            }
+        }
+        window.addEventListener('load', initTailwind);
+    </script>
 </head>
-<body>
+<body class="bg-black text-white font-sans">
 
-<nav>
-  <h2>VSIT Secured</h2>
-</nav>
+    <!-- Navigation (same as index.html) -->
+    <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-5 md:px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="text-3xl font-bold tracking-tighter text-emerald-400">VSIT</div>
+                    <div class="text-zinc-400 text-xs md:text-sm font-mono tracking-widest">SECURED</div>
+                </a>
+                <div class="flex items-center gap-6 md:gap-8 text-sm font-medium">
+                    <a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
+                    <a href="protection.html" class="text-emerald-400">Protection</a>
+                    <a href="assessment.html" class="hover:text-emerald-400 transition-colors">Assessment</a>
+                    <a href="contact.html" class="hover:text-emerald-400 transition-colors">Contact</a>
+                </div>
+                <a href="assessment.html" class="bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors hidden md:block">
+                    Free Assessment
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<section class="container">
+    <!-- Hero -->
+    <section class="bg-black py-16 border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-5 md:px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-4">
+                Zero Trust Protection
+            </h1>
+            <p class="text-xl text-zinc-300 max-w-2xl mx-auto">
+                Stop cyber attacks before they start with ThreatLocker-powered application control, ringfencing, and advanced IT management.
+            </p>
+        </div>
+    </section>
 
-  <h1>Zero Trust Protection</h1>
-  <p>We secure your business using advanced application control and system protection.</p>
+    <!-- Services Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-5 md:px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="text-2xl font-semibold mb-3">Application Control</h3>
+                    <p class="text-zinc-400">Only allow trusted applications to run. Block everything else by default.</p>
+                </div>
+                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-2xl font-semibold mb-3">Web & Network Control</h3>
+                    <p class="text-zinc-400">Granular control over internet access and network connections.</p>
+                </div>
+                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                    <div class="text-4xl mb-4">💾</div>
+                    <h3 class="text-2xl font-semibold mb-3">Data Protection</h3>
+                    <p class="text-zinc-400">Ringfencing and storage control to prevent data exfiltration.</p>
+                </div>
+                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-2xl font-semibold mb-3">Patch Management</h3>
+                    <p class="text-zinc-400">Automated, policy-driven patching with zero-trust oversight.</p>
+                </div>
+                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                    <div class="text-4xl mb-4">🧑‍💻</div>
+                    <h3 class="text-2xl font-semibold mb-3">Remote IT Access</h3>
+                    <p class="text-zinc-400">Secure remote management with full audit logging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="grid">
-    <div class="card">🔒 Application Control</div>
-    <div class="card">🌐 Web Control</div>
-    <div class="card">💾 Data Protection</div>
-    <div class="card">🔄 Patch Management</div>
-    <div class="card">🧑‍💻 Remote IT Access</div>
-  </div>
+    <!-- Pricing Plans -->
+    <section class="py-20 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-5 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold tracking-tight mb-3">VSIT SecureStack™ Plans</h2>
+                <p class="text-zinc-400 max-w-md mx-auto">Choose the protection level that fits your business. All plans include ThreatLocker licensing + VSIT management.</p>
+            </div>
 
-  <div class="pricing">
-    <h2>VSIT SecureStack™</h2>
-    <p>$100–$150 per workstation/month</p>
-    <p>$100–$200 per server/month</p>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Starter Plan -->
+                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 font-mono text-sm mb-2">STARTER</div>
+                    <h3 class="text-3xl font-bold mb-1">Essential Zero Trust</h3>
+                    <p class="text-zinc-400 mb-8">Perfect for small businesses (1-25 devices)</p>
+                    
+                    <div class="mb-8">
+                        <span class="text-5xl font-bold">$99</span>
+                        <span class="text-zinc-400">/workstation/mo</span>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-10 text-sm">
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Core Application Control</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Ringfencing & Storage Control</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Basic Patch Management</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Monthly Reporting</li>
+                    </ul>
+                    
+                    <a href="https://calendly.com/vsitsecure/30min" target="_blank"
+                       class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black transition-colors py-4 rounded-2xl font-semibold">
+                        Get Started
+                    </a>
+                </div>
 
-    <p style="margin-top:20px; font-size:18px;">
-      ⚠️ Most cyber attacks happen to businesses without proper monitoring and control.
-      Don’t wait until it’s too late.
-    </p>
+                <!-- Pro Plan (Most Popular) -->
+                <div class="bg-zinc-900 border-2 border-emerald-500 rounded-3xl p-8 relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-xs font-bold px-6 py-1 rounded-full">MOST POPULAR</div>
+                    
+                    <div class="text-emerald-400 font-mono text-sm mb-2">PRO</div>
+                    <h3 class="text-3xl font-bold mb-1">Full Zero Trust</h3>
+                    <p class="text-zinc-400 mb-8">Best for growing businesses (10-100 devices)</p>
+                    
+                    <div class="mb-8">
+                        <span class="text-5xl font-bold">$149</span>
+                        <span class="text-zinc-400">/workstation/mo</span>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-10 text-sm">
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Everything in Starter</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Web & Network Control</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Advanced Patch + Remote Access</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Weekly Threat Reports</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Priority Support</li>
+                    </ul>
+                    
+                    <a href="https://calendly.com/vsitsecure/30min" target="_blank"
+                       class="block text-center bg-emerald-500 hover:bg-emerald-400 text-black transition-colors py-4 rounded-2xl font-semibold">
+                        Choose Pro Plan
+                    </a>
+                </div>
 
-    <a href="https://calendly.com/vsitsecure/30min" target="_blank" class="btn">
-      Book a Free Security Call
-    </a>
-  </div>
+                <!-- Enterprise Plan -->
+                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-all">
+                    <div class="text-emerald-400 font-mono text-sm mb-2">ENTERPRISE</div>
+                    <h3 class="text-3xl font-bold mb-1">Complete Protection</h3>
+                    <p class="text-zinc-400 mb-8">For larger teams &amp; compliance needs</p>
+                    
+                    <div class="mb-8">
+                        <span class="text-5xl font-bold">$199</span>
+                        <span class="text-zinc-400">/workstation/mo</span>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-10 text-sm">
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Everything in Pro</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Full MDR / Detect Add-on</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Custom Policies &amp; Auditing</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> 24/7 Emergency Response</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Quarterly Strategy Calls</li>
+                    </ul>
+                    
+                    <a href="https://calendly.com/vsitsecure/30min" target="_blank"
+                       class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black transition-colors py-4 rounded-2xl font-semibold">
+                        Contact for Enterprise
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <!-- Quick Coverage Calculator Tool -->
+    <section class="py-20 bg-black">
+        <div class="max-w-2xl mx-auto px-5 md:px-6">
+            <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10">
+                <h2 class="text-3xl font-bold text-center mb-8">Quick Coverage Calculator</h2>
+                <p class="text-center text-zinc-400 mb-10">See your estimated monthly investment</p>
+                
+                <div class="space-y-8">
+                    <div>
+                        <label class="block text-sm text-zinc-400 mb-2">Number of Workstations</label>
+                        <input id="workstations" type="number" value="15" min="1"
+                               class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-2xl focus:outline-none focus:border-emerald-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm text-zinc-400 mb-2">Number of Servers</label>
+                        <input id="servers" type="number" value="2" min="0"
+                               class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-2xl focus:outline-none focus:border-emerald-500">
+                    </div>
+                </div>
 
+                <button onclick="calculateCost()" 
+                        class="mt-10 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-5 rounded-2xl text-lg transition-colors">
+                    Calculate Monthly Cost
+                </button>
+
+                <div id="results" class="mt-10 hidden space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                        <div class="bg-black border border-zinc-700 rounded-2xl p-6">
+                            <div class="text-xs text-zinc-400">STARTER</div>
+                            <div id="starter-cost" class="text-3xl font-bold text-emerald-400 mt-1">$0</div>
+                        </div>
+                        <div class="bg-black border-2 border-emerald-500 rounded-2xl p-6">
+                            <div class="text-xs text-emerald-400">PRO (Recommended)</div>
+                            <div id="pro-cost" class="text-3xl font-bold text-white mt-1">$0</div>
+                        </div>
+                        <div class="bg-black border border-zinc-700 rounded-2xl p-6">
+                            <div class="text-xs text-zinc-400">ENTERPRISE</div>
+                            <div id="enterprise-cost" class="text-3xl font-bold text-emerald-400 mt-1">$0</div>
+                        </div>
+                    </div>
+                    <p class="text-center text-sm text-zinc-500">* One-time setup fee may apply. Final pricing customized after consultation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warning + CTA -->
+    <section class="py-16 bg-zinc-950 text-center">
+        <div class="max-w-2xl mx-auto px-5">
+            <p class="text-lg text-amber-400 mb-6">
+                ⚠️ Most cyber attacks happen to businesses without proper monitoring and control.<br>
+                Don’t wait until it’s too late.
+            </p>
+            <a href="https://calendly.com/vsitsecure/30min" target="_blank"
+               class="inline-block bg-white text-black font-semibold px-10 py-5 rounded-2xl hover:bg-emerald-400 transition-colors">
+                Book Your Free Security Call Today
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    
+    <!-- Calculator Script -->
+    <script>
+        function calculateCost() {
+            const workstations = parseInt(document.getElementById('workstations').value) || 0;
+            const servers = parseInt(document.getElementById('servers').value) || 0;
+            
+            // Simple pricing logic (adjust as needed)
+            const starter = Math.round(workstations * 99 + servers * 120);
+            const pro = Math.round(workstations * 149 + servers * 180);
+            const enterprise = Math.round(workstations * 199 + servers * 250);
+            
+            document.getElementById('starter-cost').textContent = '$' + starter;
+            document.getElementById('pro-cost').textContent = '$' + pro;
+            document.getElementById('enterprise-cost').textContent = '$' + enterprise;
+            
+            document.getElementById('results').classList.remove('hidden');
+        }
+        
+        // Auto-calculate on input change
+        document.getElementById('workstations').addEventListener('input', calculateCost);
+        document.getElementById('servers').addEventListener('input', calculateCost);
+        
+        // Initial calculation
+        window.addEventListener('load', () => {
+            calculateCost();
+        });
+    </script>
 </body>
 </html>
