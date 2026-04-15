@@ -1,189 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>VSIT Security Assessment</title>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-<style>
-* {
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-body {
-  margin: 0;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* Card */
-.card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  padding: 40px;
-  width: 420px;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-  animation: fadeIn 0.6s ease;
-}
-
-/* Question */
-h2 {
-  margin-bottom: 30px;
-  font-weight: 500;
-}
-
-/* Buttons */
-button {
-  width: 100%;
-  padding: 14px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: none;
-  font-size: 15px;
-  cursor: pointer;
-  background: rgba(255,255,255,0.08);
-  color: white;
-  transition: all 0.25s ease;
-}
-
-button:hover {
-  background: #6366f1;
-  transform: translateY(-2px);
-}
-
-/* Progress Bar */
-.progress {
-  height: 6px;
-  width: 100%;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  margin-bottom: 25px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: #6366f1;
-  transition: width 0.4s ease;
-}
-
-/* Result */
-.result {
-  animation: fadeInUp 0.6s ease;
-}
-
-.score {
-  font-size: 40px;
-  font-weight: bold;
-  margin: 20px 0;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {opacity:0; transform: scale(0.95);}
-  to {opacity:1; transform: scale(1);}
-}
-
-@keyframes fadeInUp {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Security Assessment | VSIT Secured</title>
+    <meta name="description" content="Take our free Zero Trust Security Assessment and discover your risk level.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        function initTailwind() {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            cyber: { black: '#0a0a0a', green: '#10b981' }
+                        }
+                    }
+                }
+            }
+        }
+        window.addEventListener('load', initTailwind);
+    </script>
 </head>
+<body class="bg-black text-white font-sans">
 
-<body>
+    <!-- Navigation -->
+    <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-5 md:px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="text-3xl font-bold tracking-tighter text-emerald-400">VSIT</div>
+                    <div class="text-zinc-400 text-xs md:text-sm font-mono tracking-widest">SECURED</div>
+                </a>
+                <div class="flex items-center gap-6 md:gap-8 text-sm font-medium">
+                    <a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
+                    <a href="protection.html" class="hover:text-emerald-400 transition-colors">Protection</a>
+                    <a href="assessment.html" class="text-emerald-400">Assessment</a>
+                    <a href="contact.html" class="hover:text-emerald-400 transition-colors">Contact</a>
+                </div>
+                <a href="contact.html" 
+                   class="bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors hidden md:block">
+                    Book Call
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<div class="card">
+    <!-- Hero -->
+    <section class="py-16 border-b border-zinc-800">
+        <div class="max-w-4xl mx-auto px-5 md:px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-6">
+                Free Zero Trust<br>Security Assessment
+            </h1>
+            <p class="text-xl text-zinc-300 max-w-2xl mx-auto">
+                Answer 6 quick questions and instantly discover your business's security risk level + recommended protection plan.
+            </p>
+        </div>
+    </section>
 
-  <div class="progress">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
+    <!-- Quiz Container -->
+    <div class="max-w-2xl mx-auto px-5 md:px-6 py-12">
+        <div id="quiz-container" class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 md:p-12">
+            
+            <!-- Progress -->
+            <div class="mb-10">
+                <div class="flex justify-between text-sm text-zinc-400 mb-2">
+                    <span>Question <span id="current-question">1</span>/6</span>
+                    <span id="progress-text">17%</span>
+                </div>
+                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="h-full bg-emerald-500 w-1/6 transition-all duration-300"></div>
+                </div>
+            </div>
 
-  <h2 id="question">Loading...</h2>
+            <!-- Question -->
+            <div id="question-text" class="text-2xl md:text-3xl font-semibold leading-tight mb-10 min-h-[120px]">
+                Loading question...
+            </div>
 
-  <div id="answers"></div>
+            <!-- Options -->
+            <div id="options" class="space-y-4">
+                <!-- Options populated by JS -->
+            </div>
 
-  <div id="result" class="result" style="display:none;"></div>
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between mt-12">
+                <button id="prev-btn" 
+                        onclick="prevQuestion()"
+                        class="px-8 py-3 border border-zinc-600 hover:border-zinc-400 rounded-2xl transition-colors hidden">
+                    ← Previous
+                </button>
+                <button id="next-btn" 
+                        onclick="nextQuestion()"
+                        class="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-2xl transition-colors ml-auto hidden">
+                    Next →
+                </button>
+            </div>
+        </div>
 
-</div>
+        <!-- Results Screen (hidden initially) -->
+        <div id="results-screen" class="hidden bg-zinc-900 border border-zinc-700 rounded-3xl p-10 md:p-14 text-center">
+            <div class="text-6xl mb-6" id="score-emoji">🛡️</div>
+            <h2 class="text-4xl font-bold mb-3" id="score-title">Your Security Score</h2>
+            <div class="text-7xl font-black text-emerald-400 mb-2" id="final-score">0</div>
+            <p class="text-2xl text-zinc-300 mb-8" id="risk-level">Moderate Risk</p>
+            
+            <div class="bg-black rounded-2xl p-8 mb-10 text-left">
+                <h3 class="font-semibold mb-4 text-emerald-400">Recommended Next Step:</h3>
+                <p id="recommendation" class="text-zinc-300 leading-relaxed"></p>
+            </div>
 
-<script>
-const questions = [
-  { text: "Do you use Multi-Factor Authentication?", yes: 20, no: 0 },
-  { text: "Do you regularly back up your data?", yes: 20, no: 0 },
-  { text: "Do you have a firewall in place?", yes: 20, no: 0 },
-  { text: "Do employees receive security training?", yes: 20, no: 0 },
-  { text: "Do you use antivirus software?", yes: 20, no: 0 }
-];
+            <a href="https://calendly.com/vsitsecure/30min" target="_blank"
+               class="block w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-5 rounded-2xl text-lg transition-colors">
+                Book Your Free 30-Min Strategy Call
+            </a>
+            
+            <button onclick="restartQuiz()" 
+                    class="mt-6 text-zinc-400 hover:text-white transition-colors">
+                ← Take the quiz again
+            </button>
+        </div>
+    </div>
 
-let current = 0;
-let score = 0;
+    <script src="script.js"></script>
 
-const questionEl = document.getElementById("question");
-const answersEl = document.getElementById("answers");
-const progressBar = document.getElementById("progressBar");
-const resultEl = document.getElementById("result");
+    <!-- Quiz Logic -->
+    <script>
+        const questions = [
+            {
+                q: "Do you currently use application allowlisting (only approved apps can run)?",
+                options: ["Yes, fully implemented", "Partially / on some devices", "No, we use traditional antivirus only", "Not sure what that is"],
+                scores: [10, 6, 2, 0]
+            },
+            {
+                q: "How often are your systems and software automatically patched?",
+                options: ["Automatically within 24-48 hours", "Weekly", "Monthly or less", "Only when problems arise"],
+                scores: [10, 7, 4, 1]
+            },
+            {
+                q: "Do you have strict control over who can access company data remotely?",
+                options: ["Yes, with Zero Trust policies", "We use VPN", "Anyone with credentials can access", "We don’t allow remote access"],
+                scores: [10, 6, 2, 5]
+            },
+            {
+                q: "Have you experienced any security incidents (breaches, ransomware attempts, etc.) in the last 2 years?",
+                options: ["No incidents at all", "Minor incidents, quickly resolved", "Yes, we had a significant incident", "Prefer not to say"],
+                scores: [10, 7, 1, 4]
+            },
+            {
+                q: "Do your employees use personal devices to access company systems or email?",
+                options: ["No, strict policy against it", "Yes, but with management tools", "Yes, without restrictions", "Not sure"],
+                scores: [10, 6, 2, 3]
+            },
+            {
+                q: "How confident are you that your current security would stop a modern ransomware attack?",
+                options: ["Very confident", "Somewhat confident", "Not very confident", "Not confident at all"],
+                scores: [10, 6, 3, 0]
+            }
+        ];
 
-function renderQuestion() {
-  const q = questions[current];
+        let currentQuestion = 0;
+        let totalScore = 0;
+        let selectedAnswers = [];
 
-  questionEl.innerText = q.text;
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById("question-text").textContent = q.q;
+            document.getElementById("current-question").textContent = currentQuestion + 1;
+            
+            const progress = Math.round(((currentQuestion + 1) / questions.length) * 100);
+            document.getElementById("progress-bar").style.width = progress + "%";
+            document.getElementById("progress-text").textContent = progress + "%";
 
-  answersEl.innerHTML = `
-    <button onclick="answer(${q.yes})">Yes</button>
-    <button onclick="answer(${q.no})">No</button>
-  `;
+            const optionsDiv = document.getElementById("options");
+            optionsDiv.innerHTML = "";
 
-  progressBar.style.width = ((current) / questions.length) * 100 + "%";
-}
+            q.options.forEach((option, index) => {
+                const btn = document.createElement("button");
+                btn.className = "w-full text-left px-8 py-5 bg-black border border-zinc-700 hover:border-emerald-500 rounded-2xl transition-all text-lg";
+                btn.textContent = option;
+                btn.onclick = () => selectAnswer(index);
+                optionsDiv.appendChild(btn);
+            });
 
-function answer(points) {
-  score += points;
-  current++;
+            document.getElementById("prev-btn").classList.toggle("hidden", currentQuestion === 0);
+            document.getElementById("next-btn").classList.add("hidden");
+        }
 
-  if (current < questions.length) {
-    renderQuestion();
-  } else {
-    showResult();
-  }
-}
+        function selectAnswer(index) {
+            selectedAnswers[currentQuestion] = index;
+            totalScore += questions[currentQuestion].scores[index];
 
-function showResult() {
-  progressBar.style.width = "100%";
-  answersEl.style.display = "none";
-  questionEl.style.display = "none";
+            // Highlight selected
+            const buttons = document.querySelectorAll("#options button");
+            buttons.forEach((btn, i) => {
+                btn.classList.toggle("border-emerald-500", i === index);
+                btn.classList.toggle("bg-zinc-900", i === index);
+            });
 
-  let risk = "High Risk";
-  let color = "#ef4444";
+            document.getElementById("next-btn").classList.remove("hidden");
+        }
 
-  if (score >= 80) {
-    risk = "Low Risk";
-    color = "#22c55e";
-  } else if (score >= 40) {
-    risk = "Medium Risk";
-    color = "#f59e0b";
-  }
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
 
-  resultEl.style.display = "block";
-  resultEl.innerHTML = `
-    <h3>Your Security Score</h3>
-    <div class="score">${score}/100</div>
-    <p style="color:${color}; font-size:18px;">${risk}</p>
-    <button onclick="location.reload()">Restart Assessment</button>
-  `;
-}
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
 
-renderQuestion();
-</script>
+        function showResults() {
+            document.getElementById("quiz-container").classList.add("hidden");
+            const results = document.getElementById("results-screen");
+            results.classList.remove("hidden");
 
+            let percentage = Math.round((totalScore / 60) * 100); // max score is 60
+            if (percentage > 100) percentage = 100;
+
+            document.getElementById("final-score").textContent = percentage;
+
+            let riskLevel, emoji, recommendation;
+
+            if (percentage >= 80) {
+                riskLevel = "Low Risk - Excellent!";
+                emoji = "🛡️";
+                recommendation = "Your security posture is strong. We recommend a quick review to maintain your Zero Trust maturity with ThreatLocker.";
+            } else if (percentage >= 50) {
+                riskLevel = "Moderate Risk";
+                emoji = "⚠️";
+                recommendation = "You have some protections in place, but there are clear gaps. Our Pro Plan can significantly reduce your exposure.";
+            } else {
+                riskLevel = "High Risk";
+                emoji = "🚨";
+                recommendation = "Your business is currently vulnerable to modern attacks. We strongly recommend implementing full Zero Trust protection as soon as possible.";
+            }
+
+            document.getElementById("score-emoji").textContent = emoji;
+            document.getElementById("score-title").textContent = riskLevel;
+            document.getElementById("risk-level").textContent = riskLevel;
+            document.getElementById("recommendation").innerHTML = recommendation;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            totalScore = 0;
+            selectedAnswers = [];
+            document.getElementById("quiz-container").classList.remove("hidden");
+            document.getElementById("results-screen").classList.add("hidden");
+            loadQuestion();
+        }
+
+        // Start the quiz
+        window.addEventListener('load', () => {
+            loadQuestion();
+        });
+    </script>
 </body>
 </html>
