@@ -9,12 +9,11 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
-    <link rel="stylesheet" href="style.css">
-    
     <script>
-        // Tailwind config
+        // Tailwind config for cyber theme
         function initTailwind() {
             tailwind.config = {
+                content: [],
                 theme: {
                     extend: {
                         colors: {
@@ -29,108 +28,129 @@
         }
         window.addEventListener('load', initTailwind);
     </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .logo-glow {
+            filter: drop-shadow(0 0 60px rgba(16, 185, 129, 0.7));
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
 </head>
-<body class="bg-black text-white">
-
+<body class="bg-black text-white font-sans">
     <!-- NAVIGATION BAR -->
     <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-5 md:px-6">
             <div class="flex items-center justify-between h-16">
-                
-                <!-- Left Side: VSIT Secured Logo/Brand -->
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="text-2xl font-bold tracking-tighter text-emerald-400 group-hover:text-emerald-300 transition-colors">
+                <!-- Left: VSIT Brand -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="text-3xl font-bold tracking-tighter text-emerald-400 group-hover:text-emerald-300 transition-colors">
                         VSIT
                     </div>
-                    <div class="text-zinc-400 text-sm font-mono tracking-widest">SECURED</div>
+                    <div class="text-zinc-400 text-xs md:text-sm font-mono tracking-widest leading-none">
+                        SECURED
+                    </div>
                 </a>
 
                 <!-- Menu Links -->
-                <div class="flex items-center gap-8 text-sm font-medium">
+                <div class="flex items-center gap-6 md:gap-8 text-sm font-medium">
                     <a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
                     <a href="protection.html" class="hover:text-emerald-400 transition-colors">Protection</a>
                     <a href="assessment.html" class="hover:text-emerald-400 transition-colors">Assessment</a>
-                    <a href="contact.html" class="hover:text-emerald-400 transition-colors">Contact</a>
+                    <a href="https://calendly.com/vsitsecure/30min" target="_blank" class="hover:text-emerald-400 transition-colors">Contact</a>
                 </div>
 
-                <!-- Optional Right Side (you can add a CTA here later) -->
-                <div>
-                    <a href="assessment.html" 
-                       class="bg-emerald-500 hover:bg-emerald-400 text-black px-6 py-2 rounded-xl text-sm font-semibold transition-colors">
-                        Free Assessment
-                    </a>
-                </div>
+                <!-- Right CTA -->
+                <a href="assessment.html"
+                   class="bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors hidden md:block">
+                    Free Assessment
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION - ZERO TRUST ACTIVE -->
-    <header class="min-h-screen bg-black flex items-center relative overflow-hidden pt-8">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            
-            <!-- Left: Text -->
-            <div class="space-y-10">
-                <div class="inline-flex items-center gap-3 bg-zinc-900 border border-emerald-500/30 px-6 py-3 rounded-3xl">
-                    <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-                    <span class="uppercase tracking-[3px] text-emerald-400 font-mono text-sm font-medium">ZERO TRUST ACTIVE</span>
-                </div>
-
-                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter">
-                    Stop Cyber Attacks<br>
-                    <span class="text-emerald-400">Before They Start</span>
-                </h1>
-
-                <p class="text-xl text-zinc-300 max-w-lg">
-                    Orlando-based Zero Trust cybersecurity and advanced IT management 
-                    powered by ThreatLocker.
-                </p>
-
-                <div class="flex flex-wrap gap-5">
-                    <a href="assessment.html" 
-                       class="bg-emerald-500 hover:bg-emerald-400 transition-colors text-black font-semibold px-10 py-5 rounded-2xl text-lg flex items-center gap-3">
-                        Get Free Security Assessment
-                        <span class="text-2xl">→</span>
-                    </a>
-                    
-                    <a href="contact.html" 
-                       class="border-2 border-white/70 hover:bg-white/10 transition-colors px-10 py-5 rounded-2xl text-lg font-medium">
-                        Book Consultation
-                    </a>
-                </div>
-
-                <div class="flex items-center gap-8 text-sm text-zinc-400">
-                    <div>✓ Official ThreatLocker Partner</div>
-                    <div>VSIT Solutions and More LLC • Orlando, FL</div>
-                </div>
-            </div>
-
-            <!-- Right: VSIT Logo Animation -->
-            <div class="flex justify-center md:justify-end">
-                <div class="relative w-80 h-80 md:w-[420px] md:h-[420px] flex items-center justify-center">
-                    
-                    <!-- === PASTE YOUR ORIGINAL VSIT LOGO ANIMATION CODE HERE === -->
-                    <!-- Replace everything below with your actual animated logo from the bottom of the old page -->
-                    <div id="logo-container" class="relative">
-                        <div class="text-[260px] leading-none text-emerald-400/90 drop-shadow-[0_0_60px_#10b981] animate-pulse-slow">
-                            🛡️
-                        </div>
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-                            <div class="text-7xl font-black tracking-[6px] text-white animate-glow">VSIT</div>
-                            <div class="text-emerald-400 text-xl font-mono tracking-widest -mt-3">SECURED</div>
-                        </div>
+    <!-- HERO SECTION -->
+    <header class="min-h-screen bg-black flex items-center relative overflow-hidden py-12 md:py-0">
+        <div class="max-w-7xl mx-auto px-5 md:px-6">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                
+                <!-- Left: Text Content -->
+                <div class="space-y-8 md:space-y-10 text-center md:text-left">
+                    <!-- ZERO TRUST Badge -->
+                    <div class="inline-flex items-center gap-3 bg-zinc-900 border border-emerald-500/30 px-5 py-2.5 rounded-3xl mx-auto md:mx-0">
+                        <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+                        <span class="uppercase tracking-[2px] text-emerald-400 font-mono text-xs md:text-sm font-medium">ZERO TRUST ACTIVE</span>
                     </div>
-                    <!-- ==================================================== -->
 
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-tighter">
+                        Stop Cyber Attacks<br>
+                        <span class="text-emerald-400">Before They Start</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-zinc-300 max-w-md mx-auto md:mx-0">
+                        Orlando-based Zero Trust cybersecurity and advanced IT management
+                        powered by ThreatLocker.
+                    </p>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="assessment.html"
+                           class="bg-emerald-500 hover:bg-emerald-400 transition-colors text-black font-semibold px-8 py-4 rounded-2xl text-base md:text-lg flex items-center justify-center gap-3">
+                            Get Free Security Assessment
+                            <span class="text-2xl leading-none">→</span>
+                        </a>
+                        
+                        <a href="https://calendly.com/vsitsecure/30min"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="border-2 border-white/70 hover:bg-white/10 transition-colors px-8 py-4 rounded-2xl text-base md:text-lg font-medium">
+                            Book Consultation
+                        </a>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-zinc-400">
+                        <div class="flex items-center gap-2">
+                            <span class="text-emerald-400">✓</span>
+                            Official ThreatLocker Partner
+                        </div>
+                        <div>VSIT Solutions and More LLC • Orlando, FL</div>
+                    </div>
+                </div>
+
+                <!-- Right: Your VSIT Solutions Logo -->
+                <div class="flex justify-center md:justify-end pt-8 md:pt-0">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[440px] lg:h-[440px] flex items-center justify-center">
+                        
+                        <!-- Your uploaded logo -->
+                        <img 
+                            src="IMG_1100-logo.png" 
+                            alt="VSIT IT Solutions"
+                            class="w-full h-auto logo-glow transition-all duration-700 hover:scale-105"
+                        >
+                        
+                        <!-- Subtle emerald glow overlay to blend with theme -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/25 via-transparent to-transparent 
+                                    rounded-full pointer-events-none"></div>
+                        
+                        <!-- Extra soft glow layer -->
+                        <div class="absolute inset-0 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"></div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Background glow -->
-        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent pointer-events-none"></div>
+        <!-- Subtle background gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent pointer-events-none"></div>
     </header>
-
-    <!-- You can add more sections here later (About, Services teaser, etc.) -->
 
     <script src="script.js"></script>
 </body>
-</html>
+</html>        
