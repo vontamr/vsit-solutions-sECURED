@@ -27,7 +27,7 @@
 </head>
 <body class="bg-black text-white font-sans">
 
-    <!-- Navigation (same as index.html) -->
+    <!-- Navigation -->
     <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
             <div class="flex items-center justify-between h-16">
@@ -55,41 +55,8 @@
                 Zero Trust Protection
             </h1>
             <p class="text-xl text-zinc-300 max-w-2xl mx-auto">
-                Stop cyber attacks before they start with ThreatLocker-powered application control, ringfencing, and advanced IT management.
+                Enterprise-grade cybersecurity with ThreatLocker. Longer commitments = stronger protection and bigger savings.
             </p>
-        </div>
-    </section>
-
-    <!-- Services Grid -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-5 md:px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                    <div class="text-4xl mb-4">🔒</div>
-                    <h3 class="text-2xl font-semibold mb-3">Application Control</h3>
-                    <p class="text-zinc-400">Only allow trusted applications to run. Block everything else by default.</p>
-                </div>
-                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                    <div class="text-4xl mb-4">🌐</div>
-                    <h3 class="text-2xl font-semibold mb-3">Web & Network Control</h3>
-                    <p class="text-zinc-400">Granular control over internet access and network connections.</p>
-                </div>
-                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                    <div class="text-4xl mb-4">💾</div>
-                    <h3 class="text-2xl font-semibold mb-3">Data Protection</h3>
-                    <p class="text-zinc-400">Ringfencing and storage control to prevent data exfiltration.</p>
-                </div>
-                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                    <div class="text-4xl mb-4">🔄</div>
-                    <h3 class="text-2xl font-semibold mb-3">Patch Management</h3>
-                    <p class="text-zinc-400">Automated, policy-driven patching with zero-trust oversight.</p>
-                </div>
-                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-                    <div class="text-4xl mb-4">🧑‍💻</div>
-                    <h3 class="text-2xl font-semibold mb-3">Remote IT Access</h3>
-                    <p class="text-zinc-400">Secure remote management with full audit logging.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -98,132 +65,54 @@
         <div class="max-w-7xl mx-auto px-5 md:px-6">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold tracking-tight mb-3">VSIT SecureStack™ Plans</h2>
-                <p class="text-zinc-400 max-w-md mx-auto">Choose the protection level that fits your business. All plans include ThreatLocker licensing + VSIT management.</p>
+                <p class="text-zinc-400 max-w-md mx-auto">Official ThreatLocker Partner • Orlando, FL</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Contract & Payment Toggle -->
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
+                <div class="flex bg-zinc-900 rounded-3xl p-1">
+                    <button onclick="setContract(1)" id="contract-1" class="contract-btn px-6 py-3 rounded-3xl font-medium active">1 Year</button>
+                    <button onclick="setContract(3)" id="contract-3" class="contract-btn px-6 py-3 rounded-3xl font-medium">3 Years</button>
+                    <button onclick="setContract(5)" id="contract-5" class="contract-btn px-6 py-3 rounded-3xl font-medium">5 Years</button>
+                </div>
                 
-                <!-- Starter Plan -->
-                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-all">
-                    <div class="text-emerald-400 font-mono text-sm mb-2">STARTER</div>
-                    <h3 class="text-3xl font-bold mb-1">Essential Zero Trust</h3>
-                    <p class="text-zinc-400 mb-8">Perfect for small businesses (1-25 devices)</p>
-                    
-                    <div class="mb-8">
-                        <span class="text-5xl font-bold">$50</span>
-                        <span class="text-zinc-400">/workstation/mo</span>
-                    </div>
-                    
-                    <ul class="space-y-4 mb-10 text-sm">
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Core Application Control</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Ringfencing & Storage Control</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Basic Patch Management</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Monthly Reporting</li>
-                    </ul>
-                    
-                    <a href="https://calendly.com/vsitsecure/30min" target="_blank"
-                       class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black transition-colors py-4 rounded-2xl font-semibold">
-                        Get Started
-                    </a>
+                <div class="flex bg-zinc-900 rounded-3xl p-1">
+                    <button onclick="setPayment('monthly')" id="pay-monthly" class="payment-btn px-6 py-3 rounded-3xl font-medium active">Monthly</button>
+                    <button onclick="setPayment('yearly')" id="pay-yearly" class="payment-btn px-6 py-3 rounded-3xl font-medium">Pay Yearly <span class="text-emerald-400 text-xs">(Save 15%)</span></button>
                 </div>
+            </div>
 
-                <!-- Pro Plan (Most Popular) -->
-                <div class="bg-zinc-900 border-2 border-emerald-500 rounded-3xl p-8 relative">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-xs font-bold px-6 py-1 rounded-full">MOST POPULAR</div>
-                    
-                    <div class="text-emerald-400 font-mono text-sm mb-2">PRO</div>
-                    <h3 class="text-3xl font-bold mb-1">Full Zero Trust</h3>
-                    <p class="text-zinc-400 mb-8">Best for growing businesses (10-100 devices)</p>
-                    
-                    <div class="mb-8">
-                        <span class="text-5xl font-bold">$149</span>
-                        <span class="text-zinc-400">/workstation/mo</span>
-                    </div>
-                    
-                    <ul class="space-y-4 mb-10 text-sm">
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Everything in Starter</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Web & Network Control</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Advanced Patch + Remote Access</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Weekly Threat Reports</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Priority Support</li>
-                    </ul>
-                    
-                    <a href="https://calendly.com/vsitsecure/30min" target="_blank"
-                       class="block text-center bg-emerald-500 hover:bg-emerald-400 text-black transition-colors py-4 rounded-2xl font-semibold">
-                        Choose Pro Plan
-                    </a>
-                </div>
-
-                <!-- Enterprise Plan -->
-                <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-all">
-                    <div class="text-emerald-400 font-mono text-sm mb-2">ENTERPRISE</div>
-                    <h3 class="text-3xl font-bold mb-1">Complete Protection</h3>
-                    <p class="text-zinc-400 mb-8">For larger teams &amp; compliance needs</p>
-                    
-                    <div class="mb-8">
-                        <span class="text-5xl font-bold">$199</span>
-                        <span class="text-zinc-400">/workstation/mo</span>
-                    </div>
-                    
-                    <ul class="space-y-4 mb-10 text-sm">
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Everything in Pro</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Full MDR / Detect Add-on</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Custom Policies &amp; Auditing</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> 24/7 Emergency Response</li>
-                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Quarterly Strategy Calls</li>
-                    </ul>
-                    
-                    <a href="https://calendly.com/vsitsecure/30min" target="_blank"
-                       class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black transition-colors py-4 rounded-2xl font-semibold">
-                        Contact for Enterprise
-                    </a>
-                </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto" id="pricing-cards">
+                <!-- Cards populated by JS -->
             </div>
         </div>
     </section>
 
-    <!-- Quick Coverage Calculator Tool -->
+    <!-- Updated Coverage Calculator -->
     <section class="py-20 bg-black">
         <div class="max-w-2xl mx-auto px-5 md:px-6">
             <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10">
-                <h2 class="text-3xl font-bold text-center mb-8">Quick Coverage Calculator</h2>
-                <p class="text-center text-zinc-400 mb-10">See your estimated monthly investment</p>
+                <h2 class="text-3xl font-bold text-center mb-8">Coverage Calculator</h2>
+                <p class="text-center text-zinc-400 mb-10">Real-time pricing with volume discounts & contract savings</p>
                 
                 <div class="space-y-8">
                     <div>
-                        <label class="block text-sm text-zinc-400 mb-2">Number of Workstations</label>
-                        <input id="workstations" type="number" value="15" min="1"
-                               class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-2xl focus:outline-none focus:border-emerald-500">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm text-zinc-400 mb-2">Number of Servers</label>
-                        <input id="servers" type="number" value="2" min="0"
-                               class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-2xl focus:outline-none focus:border-emerald-500">
+                        <label class="block text-sm text-zinc-400 mb-2">Total Devices (Workstations + Servers)</label>
+                        <input id="total-devices" type="number" value="15" min="1"
+                               class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-3xl focus:outline-none focus:border-emerald-500">
                     </div>
                 </div>
 
                 <button onclick="calculateCost()" 
                         class="mt-10 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-5 rounded-2xl text-lg transition-colors">
-                    Calculate Monthly Cost
+                    Calculate Secure Pricing
                 </button>
 
-                <div id="results" class="mt-10 hidden space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                        <div class="bg-black border border-zinc-700 rounded-2xl p-6">
-                            <div class="text-xs text-zinc-400">STARTER</div>
-                            <div id="starter-cost" class="text-3xl font-bold text-emerald-400 mt-1">$0</div>
-                        </div>
-                        <div class="bg-black border-2 border-emerald-500 rounded-2xl p-6">
-                            <div class="text-xs text-emerald-400">PRO (Recommended)</div>
-                            <div id="pro-cost" class="text-3xl font-bold text-white mt-1">$0</div>
-                        </div>
-                        <div class="bg-black border border-zinc-700 rounded-2xl p-6">
-                            <div class="text-xs text-zinc-400">ENTERPRISE</div>
-                            <div id="enterprise-cost" class="text-3xl font-bold text-emerald-400 mt-1">$0</div>
-                        </div>
+                <div id="results" class="mt-10 hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <!-- Dynamic results populated by JS -->
                     </div>
-                    <p class="text-center text-sm text-zinc-500">* One-time setup fee may apply. Final pricing customized after consultation.</p>
+                    <p class="text-center text-sm text-emerald-400 mt-8">* Final contract pricing provided after consultation. Setup fee may apply.</p>
                 </div>
             </div>
         </div>
@@ -233,43 +122,129 @@
     <section class="py-16 bg-zinc-950 text-center">
         <div class="max-w-2xl mx-auto px-5">
             <p class="text-lg text-amber-400 mb-6">
-                ⚠️ Most cyber attacks happen to businesses without proper monitoring and control.<br>
-                Don’t wait until it’s too late.
+                ⚠️ 93% of ransomware attacks target businesses with weak application control.<br>
+                Lock down your environment before the next attack hits.
             </p>
             <a href="https://calendly.com/vsitsecure/30min" target="_blank"
                class="inline-block bg-white text-black font-semibold px-10 py-5 rounded-2xl hover:bg-emerald-400 transition-colors">
-                Book Your Free Security Call Today
+                Book Your Free Security Strategy Call
             </a>
         </div>
     </section>
 
     <script src="script.js"></script>
     
-    <!-- Calculator Script -->
+    <!-- Pricing Engine -->
     <script>
-        function calculateCost() {
-            const workstations = parseInt(document.getElementById('workstations').value) || 0;
-            const servers = parseInt(document.getElementById('servers').value) || 0;
-            
-            // Simple pricing logic (adjust as needed)
-            const starter = Math.round(workstations * 99 + servers * 120);
-            const pro = Math.round(workstations * 149 + servers * 180);
-            const enterprise = Math.round(workstations * 199 + servers * 250);
-            
-            document.getElementById('starter-cost').textContent = '$' + starter;
-            document.getElementById('pro-cost').textContent = '$' + pro;
-            document.getElementById('enterprise-cost').textContent = '$' + enterprise;
-            
-            document.getElementById('results').classList.remove('hidden');
+        let currentContract = 1;
+        let currentPayment = 'monthly';
+
+        const plans = [
+            { name: "STARTER", title: "Essential Zero Trust", base: 99 },
+            { name: "PRO", title: "Full Zero Trust", base: 149, popular: true },
+            { name: "ENTERPRISE", title: "Complete Protection", base: 199 }
+        ];
+
+        function getVolumeDiscount(devices) {
+            if (devices >= 100) return 0.35;
+            if (devices >= 50) return 0.25;
+            if (devices >= 25) return 0.18;
+            if (devices >= 10) return 0.10;
+            return 0;
         }
-        
-        // Auto-calculate on input change
-        document.getElementById('workstations').addEventListener('input', calculateCost);
-        document.getElementById('servers').addEventListener('input', calculateCost);
-        
-        // Initial calculation
-        window.addEventListener('load', () => {
+
+        function calculatePrice(base, devices, contractYears, isYearly) {
+            let price = base * (1 - getVolumeDiscount(devices));
+            if (isYearly) price *= 0.85; // 15% annual discount
+            return Math.round(price);
+        }
+
+        function renderPricingCards(devices = 15) {
+            const container = document.getElementById('pricing-cards');
+            container.innerHTML = '';
+
+            plans.forEach(plan => {
+                const discount = getVolumeDiscount(devices);
+                const monthly = calculatePrice(plan.base, devices, currentContract, false);
+                const yearlyPerMo = calculatePrice(plan.base, devices, currentContract, true);
+                
+                const cardHTML = `
+                <div class="bg-zinc-900 ${plan.popular ? 'border-2 border-emerald-500 relative' : 'border border-zinc-700'} rounded-3xl p-8 hover:border-emerald-500/50 transition-all">
+                    ${plan.popular ? `<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-xs font-bold px-6 py-1 rounded-full">MOST POPULAR</div>` : ''}
+                    
+                    <div class="text-emerald-400 font-mono text-sm mb-2">${plan.name}</div>
+                    <h3 class="text-3xl font-bold mb-1">${plan.title}</h3>
+                    <p class="text-zinc-400 mb-6">ThreatLocker + VSIT Management</p>
+                    
+                    <div class="mb-8">
+                        <span class="text-5xl font-bold">$${monthly}</span>
+                        <span class="text-zinc-400">/device/mo</span>
+                    </div>
+                    
+                    <div class="text-xs text-emerald-400 mb-6">
+                        ${discount > 0 ? `Volume discount applied: ${(discount*100).toFixed(0)}% off` : ''}
+                        ${currentPayment === 'yearly' ? ' • Annual billing (15% saved)' : ''}
+                    </div>
+                    
+                    <ul class="space-y-4 mb-10 text-sm">
+                        ${plan.name === "STARTER" ? `
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Core Application Control</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Ringfencing & Storage Control</li>` : ''}
+                        ${plan.name === "PRO" || plan.name === "ENTERPRISE" ? `
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Web & Network Control</li>
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Advanced Patch Management</li>` : ''}
+                        ${plan.name === "ENTERPRISE" ? `
+                        <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> 24/7 MDR & Emergency Response</li>` : ''}
+                    </ul>
+                    
+                    <a href="https://calendly.com/vsitsecure/30min" target="_blank"
+                       class="block text-center ${plan.popular ? 'bg-emerald-500 text-black' : 'bg-zinc-800 hover:bg-emerald-500 hover:text-black'} py-4 rounded-2xl font-semibold transition-colors">
+                        ${plan.name === "ENTERPRISE" ? "Contact for Custom Quote" : "Secure This Plan"}
+                    </a>
+                </div>`;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        function setContract(years) {
+            currentContract = years;
+            document.querySelectorAll('.contract-btn').forEach(btn => btn.classList.remove('active', 'bg-emerald-500', 'text-black'));
+            document.getElementById(`contract-${years}`).classList.add('active', 'bg-emerald-500', 'text-black');
             calculateCost();
+        }
+
+        function setPayment(type) {
+            currentPayment = type;
+            document.querySelectorAll('.payment-btn').forEach(btn => btn.classList.remove('active', 'bg-emerald-500', 'text-black'));
+            document.getElementById(`pay-${type}`).classList.add('active', 'bg-emerald-500', 'text-black');
+            calculateCost();
+        }
+
+        function calculateCost() {
+            const devices = parseInt(document.getElementById('total-devices').value) || 15;
+            renderPricingCards(devices);
+            
+            // Results summary
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.classList.remove('hidden');
+            resultsDiv.innerHTML = `
+                <div class="text-center">
+                    <p class="text-emerald-400 text-sm mb-2">FOR ${devices} DEVICES • ${currentContract}-YEAR CONTRACT</p>
+                    <p class="text-4xl font-bold">Volume discounts + annual savings applied</p>
+                    <a href="https://calendly.com/vsitsecure/30min" target="_blank" 
+                       class="inline-block mt-8 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-10 py-4 rounded-2xl">
+                        Get Locked-In Pricing →
+                    </a>
+                </div>`;
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            renderPricingCards(15);
+            calculateCost();
+            
+            // Live update on device count change
+            document.getElementById('total-devices').addEventListener('input', calculateCost);
         });
     </script>
 </body>
