@@ -64,47 +64,56 @@
 
     <div class="max-w-6xl mx-auto px-5 md:px-6 py-16 grid md:grid-cols-2 gap-16">
         
-        <!-- Contact Form -->
+        <!-- Contact Form - NOW SECURED WITH FORMSPREE -->
         <div>
             <h2 class="text-3xl font-semibold mb-8">Send us a message</h2>
             
-            <form id="contact-form" class="space-y-8">
+            <form id="contact-form" 
+                  action="https://formspree.io/f/xredpbjy" 
+                  method="POST" 
+                  class="space-y-8">
+                
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm text-zinc-400 mb-2">First Name</label>
-                        <input type="text" id="first-name" required
+                        <input type="text" name="first-name" id="first-name" required
                                class="w-full bg-black border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 text-white placeholder-zinc-500 focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-sm text-zinc-400 mb-2">Last Name</label>
-                        <input type="text" id="last-name" required
+                        <input type="text" name="last-name" id="last-name" required
                                class="w-full bg-black border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 text-white placeholder-zinc-500 focus:outline-none">
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-sm text-zinc-400 mb-2">Business Email</label>
-                    <input type="email" id="email" required
+                    <input type="email" name="email" id="email" required
                            class="w-full bg-black border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 text-white placeholder-zinc-500 focus:outline-none">
                 </div>
 
                 <div>
                     <label class="block text-sm text-zinc-400 mb-2">Company Name</label>
-                    <input type="text" id="company" 
+                    <input type="text" name="company" id="company"
                            class="w-full bg-black border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 text-white placeholder-zinc-500 focus:outline-none">
                 </div>
 
                 <div>
                     <label class="block text-sm text-zinc-400 mb-2">How many devices do you need to protect? (workstations + servers)</label>
-                    <input type="number" id="devices" min="1" placeholder="15"
+                    <input type="number" name="devices" id="devices" min="1" placeholder="15"
                            class="w-full bg-black border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 text-white placeholder-zinc-500 focus:outline-none">
                 </div>
 
                 <div>
                     <label class="block text-sm text-zinc-400 mb-2">Tell us about your biggest security concern</label>
-                    <textarea id="message" rows="5"
+                    <textarea name="message" id="message" rows="5"
                               class="w-full bg-black border border-zinc-700 focus:border-emerald-500 rounded-2xl px-6 py-4 text-white placeholder-zinc-500 focus:outline-none resize-y"></textarea>
                 </div>
+
+                <!-- Hidden fields for secure email delivery & tracking -->
+                <input type="hidden" name="_subject" value="🚨 New VSIT Secured Lead - Zero Trust Inquiry">
+                <input type="hidden" name="_next" value="https://vsitsecured.com/thank-you.html">
+                <input type="hidden" name="_captcha" value="true">
 
                 <button type="submit"
                         class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-5 rounded-2xl text-lg transition-colors">
@@ -113,7 +122,7 @@
             </form>
         </div>
 
-        <!-- Contact Info + Location -->
+        <!-- Contact Info + Location (unchanged) -->
         <div class="space-y-12">
             <div>
                 <h2 class="text-3xl font-semibold mb-8">Get in touch directly</h2>
@@ -157,7 +166,7 @@
             <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
                 <h3 class="text-2xl font-semibold mb-4">Book a Free 30-Min Call</h3>
                 <p class="text-zinc-400 mb-6">
-                    Speak directly with our Zero Trust specialist. We'll review your current setup and show you how ThreatLocker can protect your business.
+                    Speak directly with our Zero Trust specialist. We'll review your current setup and show you how ThreatLocker + Immy.bot can protect your business.
                 </p>
                 <a href="https://calendly.com/vsitsecure/30min" target="_blank"
                    class="block text-center bg-white text-black font-semibold py-5 rounded-2xl hover:bg-emerald-400 transition-colors">
@@ -173,11 +182,11 @@
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-emerald-400">✓</span>
-                    <span>Orlando-based • Serving Florida businesses</span>
+                    <span>Official Immy.bot Partner</span>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-emerald-400">✓</span>
-                    <span>Fast response • No sales pressure</span>
+                    <span>Orlando-based • Serving Florida businesses</span>
                 </div>
             </div>
         </div>
@@ -193,19 +202,5 @@
     </div>
 
     <script src="script.js"></script>
-
-    <!-- Form Submission (Simple alert for now - you can connect to Formspree/Netlify later) -->
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const firstName = document.getElementById('first-name').value;
-            
-            alert(`Thank you, ${firstName}! Your message has been received.\n\nWe'll contact you within 24 hours to schedule your free consultation.`);
-            
-            // Reset form
-            this.reset();
-        });
-    </script>
 </body>
 </html>
