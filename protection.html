@@ -33,7 +33,7 @@ line-height: 1.7;
 </head>
 <body class="bg-black text-white font-sans">
 
-<!-- Navigation -->
+<!-- NAV with Hamburger -->
 <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
 <div class="max-w-7xl mx-auto px-5 md:px-6">
 <div class="flex items-center justify-between h-16">
@@ -41,13 +41,38 @@ line-height: 1.7;
 <div class="text-3xl font-bold tracking-tighter text-emerald-400">VSIT</div>
 <div class="text-zinc-400 text-xs md:text-sm font-mono tracking-widest">SECURED</div>
 </a>
-<div class="flex items-center gap-6 md:gap-8 text-sm font-medium">
+
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-6 md:gap-8 text-sm font-medium">
 <a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
 <a href="protection.html" class="text-emerald-400">Protection</a>
 <a href="assessment.html" class="hover:text-emerald-400 transition-colors">Assessment</a>
 <a href="contact.html" class="hover:text-emerald-400 transition-colors">Contact</a>
 </div>
-<a href="assessment.html" class="bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors hidden md:block">Free Assessment</a>
+
+<!-- Desktop CTA -->
+<a href="assessment.html" class="hidden md:block bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors">
+Free Assessment
+</a>
+
+<!-- Mobile Hamburger -->
+<button id="hamburger-btn" class="md:hidden flex items-center justify-center w-10 h-10 text-emerald-400 hover:text-emerald-300 transition-colors" aria-label="Toggle menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+</button>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-black border-t border-zinc-800 px-5 py-6">
+<div class="flex flex-col gap-4 text-sm font-medium">
+<a href="index.html" class="hover:text-emerald-400 transition-colors py-2">Home</a>
+<a href="protection.html" class="text-emerald-400 py-2">Protection</a>
+<a href="assessment.html" class="hover:text-emerald-400 transition-colors py-2">Assessment</a>
+<a href="contact.html" class="hover:text-emerald-400 transition-colors py-2">Contact</a>
+<a href="assessment.html" class="mt-4 bg-emerald-500 hover:bg-emerald-400 text-black px-6 py-3 rounded-2xl text-sm font-semibold transition-colors text-center">
+Free Assessment
+</a>
 </div>
 </div>
 </nav>
@@ -125,7 +150,7 @@ Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 round
 </div>
 </div>
 
-<!-- PROMINENT QUANTITY SELECTOR -->
+<!-- Quantity Selector -->
 <div class="max-w-3xl mx-auto mb-10">
 <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
 <h3 class="text-xl font-semibold text-center mb-6">Select Your Licensing Quantity</h3>
@@ -143,69 +168,60 @@ Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 round
 </div>
 </div>
 
-<!-- PRICING CARDS WITH LIVE PRICE UPDATES -->
+<!-- Pricing Cards -->
 <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
 
-<!-- Starter Card -->
+<!-- Starter -->
 <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
 <div class="text-emerald-400 font-mono text-sm mb-2">STARTER</div>
 <h3 class="text-3xl font-bold mb-1">Essential Zero Trust</h3>
 <p class="text-zinc-400 mb-6">Perfect for small businesses</p>
-
 <div class="mb-6">
 <span id="starter-price" class="text-5xl font-bold">$50</span>
 <span class="text-zinc-400">/workstation/mo</span>
 </div>
-
 <ul class="space-y-3 mb-8 text-sm flex-1">
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Core Application Control</li>
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Ringfencing &amp; Storage Control</li>
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Basic Patch Management</li>
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Monthly Reporting</li>
 </ul>
-
 <p class="text-[10px] text-zinc-500 mb-6">Subject to VSIT Solutions and More LLC MSA</p>
 <a href="#" onclick="showContractModal('starter')" class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
 </div>
 
-<!-- Pro Card -->
+<!-- Pro -->
 <div class="bg-zinc-900 border-2 border-emerald-500 rounded-3xl p-8 flex flex-col relative">
 <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-xs font-bold px-6 py-1 rounded-full">MOST POPULAR</div>
 <div class="text-emerald-400 font-mono text-sm mb-2">PRO</div>
 <h3 class="text-3xl font-bold mb-1">Full Zero Trust</h3>
 <p class="text-zinc-400 mb-6">Best for growing businesses</p>
-
 <div class="mb-6">
 <span id="pro-price" class="text-5xl font-bold">$75</span>
 <span class="text-zinc-400">/workstation/mo</span>
 </div>
-
 <ul class="space-y-3 mb-8 text-sm flex-1">
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Starter + Web &amp; Network Control</li>
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Advanced Patch + Remote Access</li>
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Weekly Threat Reports + Priority Support</li>
 </ul>
-
 <p class="text-[10px] text-zinc-500 mb-6">Subject to VSIT Solutions and More LLC MSA</p>
 <a href="#" onclick="showContractModal('pro')" class="block text-center bg-emerald-500 hover:bg-emerald-400 text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
 </div>
 
-<!-- Enterprise Card -->
+<!-- Enterprise -->
 <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
 <div class="text-emerald-400 font-mono text-sm mb-2">ENTERPRISE</div>
 <h3 class="text-3xl font-bold mb-1">Complete Protection</h3>
 <p class="text-zinc-400 mb-6">For larger teams &amp; compliance needs</p>
-
 <div class="mb-6">
 <span id="enterprise-price" class="text-5xl font-bold">$100</span>
 <span class="text-zinc-400">/workstation/mo</span>
 </div>
-
 <ul class="space-y-3 mb-8 text-sm flex-1">
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Pro + Full MDR</li>
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> 24/7 Emergency Response + Quarterly Strategy Calls</li>
 </ul>
-
 <p class="text-[10px] text-zinc-500 mb-6">Subject to VSIT Solutions and More LLC MSA</p>
 <a href="#" onclick="showContractModal('enterprise')" class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
 </div>
@@ -352,7 +368,7 @@ proBase *= 0.8;
 enterpriseBase *= 0.8;
 }
 
-// Update prices on the cards (live)
+// Live update prices on the cards
 document.getElementById('starter-price').textContent = '$' + Math.round(starterBase);
 document.getElementById('pro-price').textContent = '$' + Math.round(proBase);
 document.getElementById('enterprise-price').textContent = '$' + Math.round(enterpriseBase);
@@ -432,12 +448,32 @@ const btn = document.getElementById('accept-btn');
 checkbox.addEventListener('change', () => btn.disabled = !checkbox.checked);
 }
 
+// Mobile Hamburger Menu
+function initMobileMenu() {
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (hamburgerBtn && mobileMenu) {
+hamburgerBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+});
+
+const links = mobileMenu.querySelectorAll('a');
+links.forEach(link => {
+link.addEventListener('click', () => {
+mobileMenu.classList.add('hidden');
+});
+});
+}
+}
+
 // Init everything
 window.onload = () => {
 updateDeck();
 setBillingCycle('monthly');
 calculateCost();
 initContractModal();
+initMobileMenu();
 };
 </script>
 
