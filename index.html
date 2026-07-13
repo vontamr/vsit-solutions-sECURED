@@ -23,7 +23,6 @@ window.addEventListener('load', initTailwind);
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 body { font-family: 'Inter', system_ui, sans-serif; }
 
 .hero-stars {
@@ -35,7 +34,7 @@ content: '';
 position: absolute;
 top: 0; left: 0;
 width: 100%; height: 100%;
-background: 
+background:
 radial-gradient(circle, rgba(16, 185, 129, 0.7) 0.8px, transparent 0),
 radial-gradient(circle, rgba(134, 239, 172, 0.5) 0.6px, transparent 0);
 background-size: 80px 80px, 140px 140px;
@@ -50,7 +49,7 @@ content: '';
 position: absolute;
 top: 0; left: 0;
 width: 100%; height: 100%;
-background: 
+background:
 radial-gradient(ellipse at 20% 30%, rgba(16, 185, 129, 0.18) 0%, transparent 60%),
 radial-gradient(ellipse at 80% 70%, rgba(134, 239, 172, 0.12) 0%, transparent 60%);
 pointer-events: none;
@@ -61,7 +60,7 @@ animation: nebula 35s ease infinite;
 @keyframes nebula { 0%, 100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.06) rotate(1deg); } }
 
 .logo-glow {
-filter: drop-shadow(0 0 20px rgb(16 185 129)) 
+filter: drop-shadow(0 0 20px rgb(16 185 129))
 drop-shadow(0 0 40px rgb(16 185 129 / 0.6))
 drop-shadow(0 0 70px rgb(134 239 172 / 0.4));
 transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,17 +89,45 @@ letter-spacing: 0.6px;
 <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
 <div class="max-w-7xl mx-auto px-5 md:px-6">
 <div class="flex items-center justify-between h-16">
+<!-- Logo -->
 <a href="index.html" class="flex items-center gap-2 group">
 <div class="text-3xl font-bold tracking-tighter text-emerald-400 group-hover:text-emerald-300 transition-colors">VSIT</div>
 <div class="text-zinc-400 text-xs md:text-sm font-mono tracking-widest leading-none">SECURED</div>
 </a>
-<div class="flex items-center gap-6 md:gap-8 text-sm font-medium">
+
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-6 md:gap-8 text-sm font-medium">
 <a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
 <a href="protection.html" class="hover:text-emerald-400 transition-colors">Protection</a>
 <a href="assessment.html" class="hover:text-emerald-400 transition-colors">Assessment</a>
 <a href="https://calendly.com/vsitsecure/30min" target="_blank" class="hover:text-emerald-400 transition-colors">Contact</a>
 </div>
-<a href="assessment.html" class="bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors hidden md:block">Free Assessment</a>
+
+<!-- Desktop CTA -->
+<a href="assessment.html" class="hidden md:block bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors">
+Free Assessment
+</a>
+
+<!-- Mobile Hamburger Button -->
+<button id="hamburger-btn" 
+class="md:hidden flex items-center justify-center w-10 h-10 text-emerald-400 hover:text-emerald-300 transition-colors"
+aria-label="Toggle menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+</button>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-black border-t border-zinc-800 px-5 py-6">
+<div class="flex flex-col gap-4 text-sm font-medium">
+<a href="index.html" class="hover:text-emerald-400 transition-colors py-2">Home</a>
+<a href="protection.html" class="hover:text-emerald-400 transition-colors py-2">Protection</a>
+<a href="assessment.html" class="hover:text-emerald-400 transition-colors py-2">Assessment</a>
+<a href="https://calendly.com/vsitsecure/30min" target="_blank" class="hover:text-emerald-400 transition-colors py-2">Contact</a>
+<a href="assessment.html" class="mt-4 bg-emerald-500 hover:bg-emerald-400 text-black px-6 py-3 rounded-2xl text-sm font-semibold transition-colors text-center">
+Free Assessment
+</a>
 </div>
 </div>
 </nav>
@@ -126,7 +153,7 @@ Stop Cyber Attacks<br>
 <div class="max-w-md mx-auto md:mx-0 mt-2">
 <div class="flex items-center gap-2 mb-1.5">
 <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-<span class="text-emerald-400 font-mono text-xs tracking-[2px] font-semibold"></span>
+<span class="text-emerald-400 font-mono text-xs tracking-[2px] font-semibold">AI SECURITY INTELLIGENCE</span>
 </div>
 <p id="ai-pulse-text" class="ai-text text-emerald-300 text-[15px] md:text-base min-h-[26px] font-medium"></p>
 </div>
@@ -178,12 +205,12 @@ Book Demo
 <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 md:p-10 max-w-3xl mx-auto">
 <div class="mb-6">
 <label class="block text-sm text-zinc-400 mb-2 font-medium">Paste suspicious code, script, or URL</label>
-<textarea id="scan-input" rows="6" 
+<textarea id="scan-input" rows="6"
 class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500 resize-y font-mono text-sm"
 placeholder="e.g. eval(atob('...')) or https://suspicious-link.com/login"></textarea>
 </div>
 
-<button onclick="runSecurityScan()" 
+<button onclick="runSecurityScan()"
 class="w-full bg-emerald-500 hover:bg-emerald-400 transition-colors text-black font-semibold py-4 rounded-2xl text-lg flex items-center justify-center gap-2">
 <span id="scan-button-text">Run AI Security Scan</span>
 </button>
@@ -193,9 +220,7 @@ class="w-full bg-emerald-500 hover:bg-emerald-400 transition-colors text-black f
 <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
 <span class="text-emerald-400 font-mono text-sm tracking-widest">AI ANALYSIS COMPLETE</span>
 </div>
-
 <div id="scan-output" class="ai-text bg-black border border-zinc-700 rounded-2xl p-6 text-sm leading-relaxed min-h-[120px]"></div>
-
 <div class="mt-4 text-xs text-zinc-500">
 This is a simulated demo. Real scans use ThreatLocker + custom AI models.
 </div>
@@ -230,7 +255,7 @@ This is a simulated demo. Real scans use ThreatLocker + custom AI models.
 
 <script src="script.js"></script>
 
-<!-- AI PULSE + SECURITY SCAN SCRIPT -->
+<!-- AI PULSE + SECURITY SCAN + HAMBURGER SCRIPT -->
 <script>
 const aiMessages = [
 "ThreatLocker AI: 0 unknown applications allowed in the last 24 hours.",
@@ -261,10 +286,6 @@ typeAIPulse();
 }
 }, 28);
 }
-
-window.onload = function() {
-typeAIPulse();
-};
 
 // Security Scan Demo
 function runSecurityScan() {
@@ -299,11 +320,33 @@ analysis = `✅ CLEAN\n\nNo threats detected. Safe to allow under current Zero T
 
 output.innerHTML = analysis.replace(/\n/g, '<br>');
 resultsDiv.classList.remove('hidden');
-
-// Scroll to results
 resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }, 1400);
 }
+
+// Mobile Hamburger Menu
+function initMobileMenu() {
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburgerBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+});
+
+
+// Close mobile menu when clicking a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', () => {
+mobileMenu.classList.add('hidden');
+});
+});
+}
+
+window.onload = function() {
+typeAIPulse();
+initMobileMenu();
+};
 </script>
 
 </body>
