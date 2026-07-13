@@ -15,19 +15,19 @@ window.addEventListener('load', initTailwind);
 <style>
 .deck-container { perspective: 1200px; }
 .stack-card {
-  transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.5s cubic-bezier(0.32, 0.72, 0, 1);
-  box-shadow: 0 25px 60px -15px rgb(0 0 0 / 0.6), 0 0 0 1px rgb(16 185 129 / 0.15);
+transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+box-shadow: 0 25px 60px -15px rgb(0 0 0 / 0.6), 0 0 0 1px rgb(16 185 129 / 0.15);
 }
 .stack-card.next {
-  transform: translateX(40px) rotate(8deg) scale(0.92);
-  box-shadow: 0 15px 40px -15px rgb(0 0 0 / 0.5);
-  z-index: 10;
-  opacity: 0.85;
+transform: translateX(40px) rotate(8deg) scale(0.92);
+box-shadow: 0 15px 40px -15px rgb(0 0 0 / 0.5);
+z-index: 10;
+opacity: 0.85;
 }
 .ai-text {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  letter-spacing: 0.4px;
-  line-height: 1.7;
+font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+letter-spacing: 0.4px;
+line-height: 1.7;
 }
 </style>
 </head>
@@ -69,44 +69,39 @@ window.addEventListener('load', initTailwind);
 </div>
 
 <div class="deck-container relative h-[420px] flex items-center justify-center">
-  
-  <!-- Active Card -->
-  <div id="active-card" class="stack-card bg-zinc-900 border border-zinc-700 rounded-3xl p-9 w-full max-w-[520px] relative z-30 cursor-grab active:cursor-grabbing">
-    <div class="absolute top-7 right-7 flex items-center gap-2">
-      <span class="inline-flex items-center px-3.5 py-1 rounded-full text-[10px] font-bold tracking-[2.5px] bg-emerald-500 text-black">AI ENHANCED</span>
-    </div>
-    
-    <div class="flex items-center gap-3 mb-3">
-      <span id="card-number" class="text-emerald-400 font-mono text-xl font-bold"></span>
-      <h3 id="card-title" class="text-3xl font-semibold tracking-tight"></h3>
-    </div>
-    
-    <p id="card-text" class="ai-text text-zinc-300 text-[15px] mb-6 min-h-[110px]"></p>
-    <p id="card-sub" class="text-emerald-400 text-sm font-medium tracking-tight"></p>
-  </div>
+<!-- Active Card -->
+<div id="active-card" class="stack-card bg-zinc-900 border border-zinc-700 rounded-3xl p-9 w-full max-w-[520px] relative z-30 cursor-grab active:cursor-grabbing">
+<div class="absolute top-7 right-7 flex items-center gap-2">
+<span class="inline-flex items-center px-3.5 py-1 rounded-full text-[10px] font-bold tracking-[2.5px] bg-emerald-500 text-black">AI ENHANCED</span>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span id="card-number" class="text-emerald-400 font-mono text-xl font-bold"></span>
+<h3 id="card-title" class="text-3xl font-semibold tracking-tight"></h3>
+</div>
+<p id="card-text" class="ai-text text-zinc-300 text-[15px] mb-6 min-h-[110px]"></p>
+<p id="card-sub" class="text-emerald-400 text-sm font-medium tracking-tight"></p>
+</div>
 
-  <!-- Peek Next Card -->
-  <div id="next-card-peek" class="stack-card next bg-zinc-900 border border-zinc-700 rounded-3xl p-9 w-full max-w-[520px] absolute hidden md:block">
-    <div class="opacity-60">
-      <div class="flex items-center gap-3 mb-3">
-        <span id="peek-number" class="text-emerald-400 font-mono text-xl font-bold"></span>
-        <h3 id="peek-title" class="text-3xl font-semibold tracking-tight"></h3>
-      </div>
-      <p id="peek-text" class="ai-text text-zinc-400 text-[15px]"></p>
-    </div>
-  </div>
+<!-- Peek Next Card -->
+<div id="next-card-peek" class="stack-card next bg-zinc-900 border border-zinc-700 rounded-3xl p-9 w-full max-w-[520px] absolute hidden md:block">
+<div class="opacity-60">
+<div class="flex items-center gap-3 mb-3">
+<span id="peek-number" class="text-emerald-400 font-mono text-xl font-bold"></span>
+<h3 id="peek-title" class="text-3xl font-semibold tracking-tight"></h3>
+</div>
+<p id="peek-text" class="ai-text text-zinc-400 text-[15px]"></p>
+</div>
+</div>
 </div>
 
 <div class="flex justify-center gap-4 mt-8">
-  <button onclick="prevCard()" class="px-8 py-3 rounded-2xl border border-zinc-700 hover:bg-zinc-800 transition-colors">← Previous</button>
-  <button onclick="nextCard()" class="px-8 py-3 rounded-2xl bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition-colors">Next →</button>
+<button onclick="prevCard()" class="px-8 py-3 rounded-2xl border border-zinc-700 hover:bg-zinc-800 transition-colors">← Previous</button>
+<button onclick="nextCard()" class="px-8 py-3 rounded-2xl bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition-colors">Next →</button>
 </div>
 
-<!-- CTA Button -->
 <div class="text-center mt-8">
-  <a href="#pricing" class="inline-block text-emerald-400 hover:text-emerald-300 font-medium text-sm tracking-widest">VIEW FULL PRICING &amp; PLANS →</a>
+<a href="#pricing" class="inline-block text-emerald-400 hover:text-emerald-300 font-medium text-sm tracking-widest">VIEW FULL PRICING &amp; PLANS →</a>
 </div>
-
 </div>
 </section>
 
@@ -130,84 +125,100 @@ Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 round
 </div>
 </div>
 
-<!-- Pricing Cards -->
-<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-
-<!-- Starter -->
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
-<div class="text-emerald-400 font-mono text-sm mb-2">STARTER</div>
-<h3 class="text-3xl font-bold mb-1">Essential Zero Trust</h3>
-<p class="text-zinc-400 mb-8">Perfect for small businesses (1-25 devices)</p>
-<div class="mb-8">
-<span class="text-5xl font-bold">$50</span>
-<span class="text-zinc-400">/workstation/mo</span>
-</div>
-<ul class="space-y-3 mb-8 text-sm">
-<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Core Application Control</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Ringfencing &amp; Storage Control</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Basic Patch Management</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Monthly Reporting</li>
-</ul>
-<p class="text-[10px] text-zinc-500 mb-6 mt-auto">Subject to VSIT Solutions and More LLC MSA</p>
-<a href="#" onclick="showContractModal('starter')" class="mt-auto block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
-</div>
-
-<!-- Pro -->
-<div class="bg-zinc-900 border-2 border-emerald-500 rounded-3xl p-8 flex flex-col relative">
-<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-xs font-bold px-6 py-1 rounded-full">MOST POPULAR</div>
-<div class="text-emerald-400 font-mono text-sm mb-2">PRO</div>
-<h3 class="text-3xl font-bold mb-1">Full Zero Trust</h3>
-<p class="text-zinc-400 mb-8">Best for growing businesses (10-100 devices)</p>
-<div class="mb-8">
-<span class="text-5xl font-bold">$75</span>
-<span class="text-zinc-400">/workstation/mo</span>
-</div>
-<ul class="space-y-3 mb-8 text-sm">
-<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Starter + Web &amp; Network Control</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Advanced Patch + Remote Access</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Weekly Threat Reports + Priority Support</li>
-</ul>
-<p class="text-[10px] text-zinc-500 mb-6 mt-auto">Subject to VSIT Solutions and More LLC MSA</p>
-<a href="#" onclick="showContractModal('pro')" class="mt-auto block text-center bg-emerald-500 hover:bg-emerald-400 text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
-</div>
-
-<!-- Enterprise -->
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
-<div class="text-emerald-400 font-mono text-sm mb-2">ENTERPRISE</div>
-<h3 class="text-3xl font-bold mb-1">Complete Protection</h3>
-<p class="text-zinc-400 mb-8">For larger teams &amp; compliance needs</p>
-<div class="mb-8">
-<span class="text-5xl font-bold">$100</span>
-<span class="text-zinc-400">/workstation/mo</span>
-</div>
-<ul class="space-y-3 mb-8 text-sm">
-<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Pro + Full MDR</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> 24/7 Emergency Response + Quarterly Strategy Calls</li>
-</ul>
-<p class="text-[10px] text-zinc-500 mb-6 mt-auto">Subject to VSIT Solutions and More LLC MSA</p>
-<a href="#" onclick="showContractModal('enterprise')" class="mt-auto block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
-</div>
-</div>
-
-<!-- REAL COST SUMMARY TOOL -->
-<div class="max-w-2xl mx-auto">
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10">
-<h2 class="text-3xl font-bold text-center mb-2">Protected Cost Summary</h2>
-<p class="text-center text-zinc-400 mb-8">Accurate real-time pricing with volume discounts</p>
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<!-- PROMINENT QUANTITY SELECTOR -->
+<div class="max-w-3xl mx-auto mb-10">
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+<h3 class="text-xl font-semibold text-center mb-6">Select Your Licensing Quantity</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
 <div>
 <label class="block text-sm text-zinc-400 mb-2">Workstations</label>
 <input id="workstations" type="number" value="15" min="1" class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-3 text-xl focus:outline-none focus:border-emerald-500">
 </div>
 <div>
-<label class="block text-sm text-zinc-400 mb-2">Servers</label>
+<label class="block text-sm text-zinc-400 mb-2">Servers (optional)</label>
 <input id="servers" type="number" value="2" min="0" class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-3 text-xl focus:outline-none focus:border-emerald-500">
 </div>
 </div>
+<p class="text-center text-xs text-emerald-400 mt-4">Quantity applies to all plans below • Prices update live</p>
+</div>
+</div>
 
-<button onclick="calculateCost()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-4 rounded-2xl text-lg mb-8 transition-colors">
-Calculate Accurate Cost
+<!-- PRICING CARDS WITH LIVE PRICE UPDATES -->
+<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+
+<!-- Starter Card -->
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
+<div class="text-emerald-400 font-mono text-sm mb-2">STARTER</div>
+<h3 class="text-3xl font-bold mb-1">Essential Zero Trust</h3>
+<p class="text-zinc-400 mb-6">Perfect for small businesses</p>
+
+<div class="mb-6">
+<span id="starter-price" class="text-5xl font-bold">$50</span>
+<span class="text-zinc-400">/workstation/mo</span>
+</div>
+
+<ul class="space-y-3 mb-8 text-sm flex-1">
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Core Application Control</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Ringfencing &amp; Storage Control</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Basic Patch Management</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Monthly Reporting</li>
+</ul>
+
+<p class="text-[10px] text-zinc-500 mb-6">Subject to VSIT Solutions and More LLC MSA</p>
+<a href="#" onclick="showContractModal('starter')" class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
+</div>
+
+<!-- Pro Card -->
+<div class="bg-zinc-900 border-2 border-emerald-500 rounded-3xl p-8 flex flex-col relative">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-xs font-bold px-6 py-1 rounded-full">MOST POPULAR</div>
+<div class="text-emerald-400 font-mono text-sm mb-2">PRO</div>
+<h3 class="text-3xl font-bold mb-1">Full Zero Trust</h3>
+<p class="text-zinc-400 mb-6">Best for growing businesses</p>
+
+<div class="mb-6">
+<span id="pro-price" class="text-5xl font-bold">$75</span>
+<span class="text-zinc-400">/workstation/mo</span>
+</div>
+
+<ul class="space-y-3 mb-8 text-sm flex-1">
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Starter + Web &amp; Network Control</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Advanced Patch + Remote Access</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Weekly Threat Reports + Priority Support</li>
+</ul>
+
+<p class="text-[10px] text-zinc-500 mb-6">Subject to VSIT Solutions and More LLC MSA</p>
+<a href="#" onclick="showContractModal('pro')" class="block text-center bg-emerald-500 hover:bg-emerald-400 text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
+</div>
+
+<!-- Enterprise Card -->
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
+<div class="text-emerald-400 font-mono text-sm mb-2">ENTERPRISE</div>
+<h3 class="text-3xl font-bold mb-1">Complete Protection</h3>
+<p class="text-zinc-400 mb-6">For larger teams &amp; compliance needs</p>
+
+<div class="mb-6">
+<span id="enterprise-price" class="text-5xl font-bold">$100</span>
+<span class="text-zinc-400">/workstation/mo</span>
+</div>
+
+<ul class="space-y-3 mb-8 text-sm flex-1">
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Pro + Full MDR</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> 24/7 Emergency Response + Quarterly Strategy Calls</li>
+</ul>
+
+<p class="text-[10px] text-zinc-500 mb-6">Subject to VSIT Solutions and More LLC MSA</p>
+<a href="#" onclick="showContractModal('enterprise')" class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
+</div>
+</div>
+
+<!-- Cost Summary -->
+<div class="max-w-2xl mx-auto">
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10">
+<h2 class="text-3xl font-bold text-center mb-2">Protected Cost Summary</h2>
+<p class="text-center text-zinc-400 mb-6 text-sm">Live totals based on quantity selected above</p>
+
+<button onclick="calculateCost()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-4 rounded-2xl text-lg mb-6 transition-colors">
+Update Totals
 </button>
 
 <div id="results" class="hidden space-y-4">
@@ -226,7 +237,7 @@ Calculate Accurate Cost
 <div id="enterprise-cost" class="text-2xl font-bold text-emerald-400 mt-1"></div>
 </div>
 </div>
-<p class="text-center text-xs text-zinc-500 mt-4">Annual contracts save 20%. Volume discounts applied automatically.</p>
+<p class="text-center text-xs text-zinc-500 mt-3">Annual contracts save 20%. Volume discounts applied automatically.</p>
 </div>
 </div>
 </div>
@@ -244,47 +255,47 @@ Calculate Accurate Cost
 
 <script src="script.js"></script>
 
-<!-- COMPLETE WORKING SCRIPT -->
+<!-- COMPLETE SCRIPT -->
 <script>
-// === SERVICES DECK (Numbered + Typewriter) ===
+// === SERVICES DECK ===
 const services = [
-  { num: "01", title: "AI-Powered Application Control", text: "Machine learning continuously learns your environment and autonomously builds precise allowlists. Unknown and risky applications are blocked by default.", sub: "ThreatLocker’s intelligent engine stops living-off-the-land attacks in real time." },
-  { num: "02", title: "Intelligent Web & Network Control", text: "AI-driven web filtering and network segmentation that detects and blocks malicious domains, C2 traffic, and risky connections — even when threats are brand new.", sub: "Adaptive control that evolves with the threat landscape." },
-  { num: "03", title: "AI-Driven Data Protection", text: "Behavioral AI continuously monitors data flows and enforces intelligent ringfencing. Suspicious exfiltration attempts are detected and blocked before damage occurs.", sub: "Proactive defense that understands normal data behavior." },
-  { num: "04", title: "Autonomous Patch Management", text: "AI-powered patching and desired-state enforcement that predicts vulnerabilities and automatically deploys updates across 200+ applications.", sub: "Immy.bot’s intelligent engine reduces your attack surface automatically." },
-  { num: "05", title: "Intelligent Remote Access & Automation", text: "AI-assisted remote management and scripting with continuous behavioral monitoring. Every action is logged and enforced under strict Zero Trust policies.", sub: "Secure automation that gets smarter while maintaining full audit visibility." }
+{ num: "01", title: "AI-Powered Application Control", text: "Machine learning continuously learns your environment and autonomously builds precise allowlists. Unknown and risky applications are blocked by default.", sub: "ThreatLocker’s intelligent engine stops living-off-the-land attacks in real time." },
+{ num: "02", title: "Intelligent Web & Network Control", text: "AI-driven web filtering and network segmentation that detects and blocks malicious domains, C2 traffic, and risky connections — even when threats are brand new.", sub: "Adaptive control that evolves with the threat landscape." },
+{ num: "03", title: "AI-Driven Data Protection", text: "Behavioral AI continuously monitors data flows and enforces intelligent ringfencing. Suspicious exfiltration attempts are detected and blocked before damage occurs.", sub: "Proactive defense that understands normal data behavior." },
+{ num: "04", title: "Autonomous Patch Management", text: "AI-powered patching and desired-state enforcement that predicts vulnerabilities and automatically deploys updates across 200+ applications.", sub: "Immy.bot’s intelligent engine reduces your attack surface automatically." },
+{ num: "05", title: "Intelligent Remote Access & Automation", text: "AI-assisted remote management and scripting with continuous behavioral monitoring. Every action is logged and enforced under strict Zero Trust policies.", sub: "Secure automation that gets smarter while maintaining full audit visibility." }
 ];
 
 let currentIndex = 0;
 let isTyping = false;
 
 function updateDeck() {
-  const s = services[currentIndex];
-  document.getElementById('card-number').textContent = s.num;
-  document.getElementById('card-title').textContent = s.title;
-  typeText('card-text', s.text);
-  document.getElementById('card-sub').textContent = s.sub;
+const s = services[currentIndex];
+document.getElementById('card-number').textContent = s.num;
+document.getElementById('card-title').textContent = s.title;
+typeText('card-text', s.text);
+document.getElementById('card-sub').textContent = s.sub;
 
-  const next = services[(currentIndex + 1) % services.length];
-  document.getElementById('peek-number').textContent = next.num;
-  document.getElementById('peek-title').textContent = next.title;
-  document.getElementById('peek-text').textContent = next.text.substring(0, 85) + "...";
+const next = services[(currentIndex + 1) % services.length];
+document.getElementById('peek-number').textContent = next.num;
+document.getElementById('peek-title').textContent = next.title;
+document.getElementById('peek-text').textContent = next.text.substring(0, 85) + "...";
 }
 
 function typeText(id, text) {
-  const el = document.getElementById(id);
-  el.textContent = '';
-  isTyping = true;
-  let i = 0;
-  const interval = setInterval(() => {
-    if (i < text.length) {
-      el.textContent += text.charAt(i);
-      i++;
-    } else {
-      clearInterval(interval);
-      isTyping = false;
-    }
-  }, 16);
+const el = document.getElementById(id);
+el.textContent = '';
+isTyping = true;
+let i = 0;
+const interval = setInterval(() => {
+if (i < text.length) {
+el.textContent += text.charAt(i);
+i++;
+} else {
+clearInterval(interval);
+isTyping = false;
+}
+}, 16);
 }
 
 function nextCard() { if (!isTyping) { currentIndex = (currentIndex + 1) % services.length; updateDeck(); } }
@@ -295,77 +306,83 @@ let startX = 0;
 const cardEl = document.getElementById('active-card');
 cardEl.addEventListener('touchstart', e => startX = e.touches[0].clientX);
 cardEl.addEventListener('touchend', e => {
-  const diff = startX - e.changedTouches[0].clientX;
-  if (diff > 60) nextCard();
-  if (diff < -60) prevCard();
+const diff = startX - e.changedTouches[0].clientX;
+if (diff > 60) nextCard();
+if (diff < -60) prevCard();
 });
-
 document.addEventListener('keydown', e => {
-  if (e.key === "ArrowRight") nextCard();
-  if (e.key === "ArrowLeft") prevCard();
+if (e.key === "ArrowRight") nextCard();
+if (e.key === "ArrowLeft") prevCard();
 });
 
-// === ACCURATE COST CALCULATOR ===
+// === LIVE PRICING + CALCULATOR ===
 let currentBillingCycle = 'monthly';
 
 function setBillingCycle(cycle) {
-  currentBillingCycle = cycle;
-  const m = document.getElementById('monthly-btn');
-  const a = document.getElementById('annual-btn');
-  if (cycle === 'monthly') {
-    m.classList.add('bg-emerald-500', 'text-black');
-    a.classList.remove('bg-emerald-500', 'text-black');
-  } else {
-    a.classList.add('bg-emerald-500', 'text-black');
-    m.classList.remove('bg-emerald-500', 'text-black');
-  }
-  calculateCost();
+currentBillingCycle = cycle;
+const m = document.getElementById('monthly-btn');
+const a = document.getElementById('annual-btn');
+if (cycle === 'monthly') {
+m.classList.add('bg-emerald-500', 'text-black');
+a.classList.remove('bg-emerald-500', 'text-black');
+} else {
+a.classList.add('bg-emerald-500', 'text-black');
+m.classList.remove('bg-emerald-500', 'text-black');
+}
+calculateCost();
 }
 
 function getVolumeDiscount(total) {
-  if (total >= 25) return 0.85;
-  if (total >= 10) return 0.90;
-  return 1;
+if (total >= 25) return 0.85;
+if (total >= 10) return 0.90;
+return 1;
 }
 
 function calculateCost() {
-  const ws = parseInt(document.getElementById('workstations').value) || 0;
-  const sv = parseInt(document.getElementById('servers').value) || 0;
-  const total = ws + sv;
-  const discount = getVolumeDiscount(total);
+const ws = parseInt(document.getElementById('workstations').value) || 0;
+const sv = parseInt(document.getElementById('servers').value) || 0;
+const total = ws + sv;
+const discount = getVolumeDiscount(total);
 
-  let starter = 50, pro = 75, enterprise = 100;
+let starterBase = 50, proBase = 75, enterpriseBase = 100;
 
-  if (currentBillingCycle === 'annual') {
-    starter *= 0.8;
-    pro *= 0.8;
-    enterprise *= 0.8;
-  }
-
-  const starterTotal = Math.round((ws * starter + sv * (starter * 1.2)) * discount);
-  const proTotal = Math.round((ws * pro + sv * (pro * 1.2)) * discount);
-  const entTotal = Math.round((ws * enterprise + sv * (enterprise * 1.2)) * discount);
-
-  document.getElementById('starter-cost').textContent = '$' + starterTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
-  document.getElementById('pro-cost').textContent = '$' + proTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
-  document.getElementById('enterprise-cost').textContent = '$' + entTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
-
-  const savingsEl = document.getElementById('pro-savings');
-  if (currentBillingCycle === 'annual') {
-    const base = Math.round((ws * 75 + sv * 90) * discount);
-    const saved = base - proTotal;
-    savingsEl.innerHTML = saved > 0 ? `You save $${saved} with annual contract` : '';
-  } else {
-    savingsEl.innerHTML = '';
-  }
-
-  document.getElementById('results').classList.remove('hidden');
+if (currentBillingCycle === 'annual') {
+starterBase *= 0.8;
+proBase *= 0.8;
+enterpriseBase *= 0.8;
 }
 
+// Update prices on the cards (live)
+document.getElementById('starter-price').textContent = '$' + Math.round(starterBase);
+document.getElementById('pro-price').textContent = '$' + Math.round(proBase);
+document.getElementById('enterprise-price').textContent = '$' + Math.round(enterpriseBase);
+
+// Calculate totals
+const starterTotal = Math.round((ws * starterBase + sv * (starterBase * 1.2)) * discount);
+const proTotal = Math.round((ws * proBase + sv * (proBase * 1.2)) * discount);
+const entTotal = Math.round((ws * enterpriseBase + sv * (enterpriseBase * 1.2)) * discount);
+
+document.getElementById('starter-cost').textContent = '$' + starterTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
+document.getElementById('pro-cost').textContent = '$' + proTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
+document.getElementById('enterprise-cost').textContent = '$' + entTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
+
+const savingsEl = document.getElementById('pro-savings');
+if (currentBillingCycle === 'annual') {
+const base = Math.round((ws * 75 + sv * 90) * discount);
+const saved = base - proTotal;
+savingsEl.innerHTML = saved > 0 ? `You save $${saved} with annual contract` : '';
+} else {
+savingsEl.innerHTML = '';
+}
+
+document.getElementById('results').classList.remove('hidden');
+}
+
+// Live updates
 document.getElementById('workstations').addEventListener('input', calculateCost);
 document.getElementById('servers').addEventListener('input', calculateCost);
 
-// === WORKING MODAL + STRIPE ===
+// === STRIPE + MODAL ===
 let starterMonthlyLink = "https://buy.stripe.com/5kQeVe2bN9lu5XofXv0ZW00";
 let proMonthlyLink = "https://buy.stripe.com/14A14o4jV8hqgC2eTr0ZW01";
 let enterpriseMonthlyLink = "https://buy.stripe.com/bJe5kE4jV1T2gC2aDb0ZW02";
@@ -376,51 +393,51 @@ let enterpriseAnnualLink = "https://buy.stripe.com/eVq4gAcQr7dm1H8fXv0ZW05";
 let pendingPlan = null;
 
 function showContractModal(plan) {
-  pendingPlan = plan;
-  document.getElementById('contract-modal').classList.remove('hidden');
-  document.getElementById('contract-modal').classList.add('flex');
-  document.getElementById('agree-checkbox').checked = false;
-  document.getElementById('accept-btn').disabled = true;
+pendingPlan = plan;
+document.getElementById('contract-modal').classList.remove('hidden');
+document.getElementById('contract-modal').classList.add('flex');
+document.getElementById('agree-checkbox').checked = false;
+document.getElementById('accept-btn').disabled = true;
 }
 
 function declineContract() {
-  const modal = document.getElementById('contract-modal');
-  modal.classList.add('hidden');
-  modal.classList.remove('flex');
+const modal = document.getElementById('contract-modal');
+modal.classList.add('hidden');
+modal.classList.remove('flex');
 }
 
 function acceptAndSubscribe() {
-  if (!document.getElementById('agree-checkbox').checked) {
-    alert("Please agree to the Master Service Agreement to continue.");
-    return;
-  }
-  const modal = document.getElementById('contract-modal');
-  modal.classList.add('hidden');
-  modal.classList.remove('flex');
+if (!document.getElementById('agree-checkbox').checked) {
+alert("Please agree to the Master Service Agreement to continue.");
+return;
+}
+const modal = document.getElementById('contract-modal');
+modal.classList.add('hidden');
+modal.classList.remove('flex');
 
-  const ws = parseInt(document.getElementById('workstations').value) || 1;
-  let link = '';
-  if (pendingPlan === 'starter') link = currentBillingCycle === 'monthly' ? starterMonthlyLink : starterAnnualLink;
-  else if (pendingPlan === 'pro') link = currentBillingCycle === 'monthly' ? proMonthlyLink : proAnnualLink;
-  else if (pendingPlan === 'enterprise') link = currentBillingCycle === 'monthly' ? enterpriseMonthlyLink : enterpriseAnnualLink;
+const ws = parseInt(document.getElementById('workstations').value) || 1;
+let link = '';
+if (pendingPlan === 'starter') link = currentBillingCycle === 'monthly' ? starterMonthlyLink : starterAnnualLink;
+else if (pendingPlan === 'pro') link = currentBillingCycle === 'monthly' ? proMonthlyLink : proAnnualLink;
+else if (pendingPlan === 'enterprise') link = currentBillingCycle === 'monthly' ? enterpriseMonthlyLink : enterpriseAnnualLink;
 
-  if (link) {
-    window.open(`${link}?quantity=${ws}`, '_blank');
-  }
+if (link) {
+window.open(`${link}?quantity=${ws}`, '_blank');
+}
 }
 
 function initContractModal() {
-  const checkbox = document.getElementById('agree-checkbox');
-  const btn = document.getElementById('accept-btn');
-  checkbox.addEventListener('change', () => btn.disabled = !checkbox.checked);
+const checkbox = document.getElementById('agree-checkbox');
+const btn = document.getElementById('accept-btn');
+checkbox.addEventListener('change', () => btn.disabled = !checkbox.checked);
 }
 
 // Init everything
 window.onload = () => {
-  updateDeck();
-  setBillingCycle('monthly');
-  calculateCost();
-  initContractModal();
+updateDeck();
+setBillingCycle('monthly');
+calculateCost();
+initContractModal();
 };
 </script>
 
