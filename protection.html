@@ -5,23 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Protection | VSIT Secured</title>
 <meta name="description" content="Zero Trust Protection powered by ThreatLocker + Immy.bot - Application Control, automated patching, and secure remote management.">
-<!-- Tailwind CSS -->
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<link rel="stylesheet" href="style.css">
 <script>
 function initTailwind() {
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-cyber: { black: '#0a0a0a', green: '#10b981' }
-                        }
-                    }
-                }
-            }
-        }
+tailwind.config = { theme: { extend: { colors: { cyber: { black: '#0a0a0a', green: '#10b981' } } } } }
+}
 window.addEventListener('load', initTailwind);
 </script>
+<style>
+.deck-container { perspective: 1200px; }
+.stack-card {
+  transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  box-shadow: 0 25px 60px -15px rgb(0 0 0 / 0.6), 0 0 0 1px rgb(16 185 129 / 0.15);
+}
+.stack-card.next {
+  transform: translateX(40px) rotate(8deg) scale(0.92);
+  box-shadow: 0 15px 40px -15px rgb(0 0 0 / 0.5);
+  z-index: 10;
+  opacity: 0.85;
+}
+.ai-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: 0.4px;
+  line-height: 1.7;
+}
+</style>
 </head>
 <body class="bg-black text-white font-sans">
 
@@ -39,9 +47,7 @@ window.addEventListener('load', initTailwind);
 <a href="assessment.html" class="hover:text-emerald-400 transition-colors">Assessment</a>
 <a href="contact.html" class="hover:text-emerald-400 transition-colors">Contact</a>
 </div>
-<a href="assessment.html" class="bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors hidden md:block">
-                    Free Assessment
-</a>
+<a href="assessment.html" class="bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors hidden md:block">Free Assessment</a>
 </div>
 </div>
 </nav>
@@ -49,163 +55,182 @@ window.addEventListener('load', initTailwind);
 <!-- Hero -->
 <section class="bg-black py-16 border-b border-zinc-800">
 <div class="max-w-7xl mx-auto px-5 md:px-6 text-center">
-<h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-4">
-                Zero Trust Protection
-</h1>
-<p class="text-xl text-zinc-300 max-w-2xl mx-auto">
-                Stop cyber attacks before they start with ThreatLocker-powered application control + Immy.bot automation, patching, and secure remote management.
-</p>
+<h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-4">Zero Trust Protection</h1>
+<p class="text-xl text-zinc-300 max-w-2xl mx-auto">Stop cyber attacks before they start with ThreatLocker-powered application control + Immy.bot automation, patching, and secure remote management.</p>
 </div>
 </section>
 
-<!-- Services Grid -->
+<!-- AI CAPABILITIES - STACKED DECK -->
 <section class="py-16">
-<div class="max-w-7xl mx-auto px-5 md:px-6">
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-<div class="text-4xl mb-4">🔒</div>
-<h3 class="text-2xl font-semibold mb-3">Application Control</h3>
-<p class="text-zinc-400">Only allow trusted applications to run. Block everything else by default with ThreatLocker.</p>
+<div class="max-w-5xl mx-auto px-5 md:px-6">
+<div class="text-center mb-10">
+<h2 class="text-3xl font-bold tracking-tight">AI-Powered Capabilities</h2>
+<p class="text-zinc-400 mt-2">Swipe or use arrows to explore our intelligent protection layers</p>
 </div>
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-<div class="text-4xl mb-4">🌐</div>
-<h3 class="text-2xl font-semibold mb-3">Web & Network Control</h3>
-<p class="text-zinc-400">Granular control over internet access and network connections.</p>
+
+<div class="deck-container relative h-[420px] flex items-center justify-center">
+  
+  <!-- Active Card -->
+  <div id="active-card" class="stack-card bg-zinc-900 border border-zinc-700 rounded-3xl p-9 w-full max-w-[520px] relative z-30 cursor-grab active:cursor-grabbing">
+    <div class="absolute top-7 right-7 flex items-center gap-2">
+      <span class="inline-flex items-center px-3.5 py-1 rounded-full text-[10px] font-bold tracking-[2.5px] bg-emerald-500 text-black">AI ENHANCED</span>
+    </div>
+    
+    <div class="flex items-center gap-3 mb-3">
+      <span id="card-number" class="text-emerald-400 font-mono text-xl font-bold"></span>
+      <h3 id="card-title" class="text-3xl font-semibold tracking-tight"></h3>
+    </div>
+    
+    <p id="card-text" class="ai-text text-zinc-300 text-[15px] mb-6 min-h-[110px]"></p>
+    <p id="card-sub" class="text-emerald-400 text-sm font-medium tracking-tight"></p>
+  </div>
+
+  <!-- Peek Next Card -->
+  <div id="next-card-peek" class="stack-card next bg-zinc-900 border border-zinc-700 rounded-3xl p-9 w-full max-w-[520px] absolute hidden md:block">
+    <div class="opacity-60">
+      <div class="flex items-center gap-3 mb-3">
+        <span id="peek-number" class="text-emerald-400 font-mono text-xl font-bold"></span>
+        <h3 id="peek-title" class="text-3xl font-semibold tracking-tight"></h3>
+      </div>
+      <p id="peek-text" class="ai-text text-zinc-400 text-[15px]"></p>
+    </div>
+  </div>
 </div>
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-<div class="text-4xl mb-4">💾</div>
-<h3 class="text-2xl font-semibold mb-3">Data Protection</h3>
-<p class="text-zinc-400">Ringfencing and storage control to prevent data exfiltration.</p>
+
+<div class="flex justify-center gap-4 mt-8">
+  <button onclick="prevCard()" class="px-8 py-3 rounded-2xl border border-zinc-700 hover:bg-zinc-800 transition-colors">← Previous</button>
+  <button onclick="nextCard()" class="px-8 py-3 rounded-2xl bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition-colors">Next →</button>
 </div>
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-<div class="text-4xl mb-4">🔄</div>
-<h3 class="text-2xl font-semibold mb-3">Patch Management</h3>
-<p class="text-zinc-400">Automated, AI-driven patching, software deployment, and desired-state enforcement powered by Immy.bot with full Zero Trust oversight from ThreatLocker.</p>
+
+<!-- CTA Button -->
+<div class="text-center mt-8">
+  <a href="#pricing" class="inline-block text-emerald-400 hover:text-emerald-300 font-medium text-sm tracking-widest">VIEW FULL PRICING &amp; PLANS →</a>
 </div>
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-<div class="text-4xl mb-4">🧑‍💻</div>
-<h3 class="text-2xl font-semibold mb-3">Remote IT Access & Automation</h3>
-<p class="text-zinc-400">Secure remote management, scripting, and endpoint automation powered by Immy.bot with complete audit logging and Zero Trust policies.</p>
-</div>
-</div>
+
 </div>
 </section>
 
-<!-- Pricing Plans + Contracts Toggle (Volume + Annual Savings) -->
-<section class="py-20 bg-zinc-950">
+<!-- PRICING SECTION -->
+<section id="pricing" class="py-20 bg-zinc-950">
 <div class="max-w-7xl mx-auto px-5 md:px-6">
+
 <div class="text-center mb-12">
 <h2 class="text-4xl font-bold tracking-tight mb-3">VSIT SecureStack™ Plans</h2>
-<p class="text-zinc-400 max-w-md mx-auto">Choose the protection level that fits your business. All plans include ThreatLocker licensing + VSIT management + Immy.bot automation.</p>
-<!-- CONTRACTS TOGGLE -->
+<p class="text-zinc-400 max-w-md mx-auto">All plans include ThreatLocker licensing + VSIT management + Immy.bot automation.</p>
+<p class="text-emerald-400 text-sm mt-2 font-medium">Official services provided by <strong>VSIT Solutions and More LLC</strong></p>
+
+<!-- Billing Toggle -->
 <div class="flex justify-center mt-8">
 <div class="inline-flex bg-zinc-900 border border-zinc-700 rounded-3xl p-1 text-sm font-medium">
 <button onclick="setBillingCycle('monthly')" id="monthly-btn" class="px-8 py-3 rounded-3xl transition-all">Monthly Billing</button>
 <button onclick="setBillingCycle('annual')" id="annual-btn" class="px-8 py-3 rounded-3xl bg-emerald-500 text-black transition-all flex items-center gap-2">
-                        Annual Contract
-<span class="text-xs bg-white text-emerald-500 px-3 py-0.5 rounded-2xl font-bold">SAVE 20%</span>
+Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 rounded-2xl font-bold">SAVE 20%</span>
 </button>
 </div>
 </div>
 </div>
 
-<!-- Pricing Cards Grid -->
-<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-<!-- Starter Plan -->
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-all">
+<!-- Pricing Cards -->
+<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+
+<!-- Starter -->
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
 <div class="text-emerald-400 font-mono text-sm mb-2">STARTER</div>
 <h3 class="text-3xl font-bold mb-1">Essential Zero Trust</h3>
 <p class="text-zinc-400 mb-8">Perfect for small businesses (1-25 devices)</p>
 <div class="mb-8">
-<span id="starter-price-display" class="text-5xl font-bold">$50</span>
-<span id="starter-price-label" class="text-zinc-400">/workstation/mo billed monthly</span>
+<span class="text-5xl font-bold">$50</span>
+<span class="text-zinc-400">/workstation/mo</span>
 </div>
-<ul class="space-y-4 mb-10 text-sm">
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Core Application Control</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Ringfencing & Storage Control</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Basic Patch Management</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Monthly Reporting</li>
+<ul class="space-y-3 mb-8 text-sm">
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Core Application Control</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Ringfencing &amp; Storage Control</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Basic Patch Management</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Monthly Reporting</li>
 </ul>
-<a href="#" onclick="subscribeToPlan('starter')" class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black transition-colors py-4 rounded-2xl font-semibold">Subscribe Now</a>
+<p class="text-[10px] text-zinc-500 mb-6 mt-auto">Subject to VSIT Solutions and More LLC MSA</p>
+<a href="#" onclick="showContractModal('starter')" class="mt-auto block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
 </div>
 
-<!-- Pro Plan (Most Popular) -->
-<div class="bg-zinc-900 border-2 border-emerald-500 rounded-3xl p-8 relative">
+<!-- Pro -->
+<div class="bg-zinc-900 border-2 border-emerald-500 rounded-3xl p-8 flex flex-col relative">
 <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-xs font-bold px-6 py-1 rounded-full">MOST POPULAR</div>
 <div class="text-emerald-400 font-mono text-sm mb-2">PRO</div>
 <h3 class="text-3xl font-bold mb-1">Full Zero Trust</h3>
 <p class="text-zinc-400 mb-8">Best for growing businesses (10-100 devices)</p>
 <div class="mb-8">
-<span id="pro-price-display" class="text-5xl font-bold">$149</span>
-<span id="pro-price-label" class="text-zinc-400">/workstation/mo billed monthly</span>
+<span class="text-5xl font-bold">$75</span>
+<span class="text-zinc-400">/workstation/mo</span>
 </div>
-<ul class="space-y-4 mb-10 text-sm">
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Everything in Starter</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Web & Network Control</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Advanced Patch + Remote Access</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Weekly Threat Reports</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Priority Support</li>
+<ul class="space-y-3 mb-8 text-sm">
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Starter + Web &amp; Network Control</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Advanced Patch + Remote Access</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Weekly Threat Reports + Priority Support</li>
 </ul>
-<a href="#" onclick="subscribeToPlan('pro')" class="block text-center bg-emerald-500 hover:bg-emerald-400 text-black transition-colors py-4 rounded-2xl font-semibold">Subscribe Now</a>
+<p class="text-[10px] text-zinc-500 mb-6 mt-auto">Subject to VSIT Solutions and More LLC MSA</p>
+<a href="#" onclick="showContractModal('pro')" class="mt-auto block text-center bg-emerald-500 hover:bg-emerald-400 text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
 </div>
 
-<!-- Enterprise Plan -->
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-all">
+<!-- Enterprise -->
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
 <div class="text-emerald-400 font-mono text-sm mb-2">ENTERPRISE</div>
 <h3 class="text-3xl font-bold mb-1">Complete Protection</h3>
-<p class="text-zinc-400 mb-8">For larger teams & compliance needs</p>
+<p class="text-zinc-400 mb-8">For larger teams &amp; compliance needs</p>
 <div class="mb-8">
-<span id="enterprise-price-display" class="text-5xl font-bold">$199</span>
-<span id="enterprise-price-label" class="text-zinc-400">/workstation/mo billed monthly</span>
+<span class="text-5xl font-bold">$100</span>
+<span class="text-zinc-400">/workstation/mo</span>
 </div>
-<ul class="space-y-4 mb-10 text-sm">
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Everything in Pro</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Full MDR / Detect Add-on</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Custom Policies & Auditing</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> 24/7 Emergency Response</li>
-<li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> Quarterly Strategy Calls</li>
+<ul class="space-y-3 mb-8 text-sm">
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Pro + Full MDR</li>
+<li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> 24/7 Emergency Response + Quarterly Strategy Calls</li>
 </ul>
-<a href="#" onclick="subscribeToPlan('enterprise')" class="block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black transition-colors py-4 rounded-2xl font-semibold">Subscribe Now</a>
+<p class="text-[10px] text-zinc-500 mb-6 mt-auto">Subject to VSIT Solutions and More LLC MSA</p>
+<a href="#" onclick="showContractModal('enterprise')" class="mt-auto block text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black py-4 rounded-2xl font-semibold">Subscribe Now</a>
 </div>
 </div>
 
-<!-- Quick Coverage Calculator Tool -->
-<div class="max-w-2xl mx-auto px-5 md:px-6 mt-16">
+<!-- REAL COST SUMMARY TOOL -->
+<div class="max-w-2xl mx-auto">
 <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-10">
-<h2 class="text-3xl font-bold text-center mb-8">Quick Coverage Calculator + Contracts</h2>
-<p class="text-center text-zinc-400 mb-10">See your protected monthly cost with volume + annual savings (ThreatLocker + Immy.bot)</p>
-<div class="space-y-8">
+<h2 class="text-3xl font-bold text-center mb-2">Protected Cost Summary</h2>
+<p class="text-center text-zinc-400 mb-8">Accurate real-time pricing with volume discounts</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 <div>
-<label class="block text-sm text-zinc-400 mb-2">Number of Workstations</label>
-<input id="workstations" type="number" value="15" min="1" class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-2xl focus:outline-none focus:border-emerald-500">
+<label class="block text-sm text-zinc-400 mb-2">Workstations</label>
+<input id="workstations" type="number" value="15" min="1" class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-3 text-xl focus:outline-none focus:border-emerald-500">
 </div>
 <div>
-<label class="block text-sm text-zinc-400 mb-2">Number of Servers</label>
-<input id="servers" type="number" value="2" min="0" class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-2xl focus:outline-none focus:border-emerald-500">
+<label class="block text-sm text-zinc-400 mb-2">Servers</label>
+<input id="servers" type="number" value="2" min="0" class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-3 text-xl focus:outline-none focus:border-emerald-500">
 </div>
 </div>
-<button onclick="calculateCost()" class="mt-10 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-5 rounded-2xl text-lg transition-colors">Calculate Protected Cost</button>
-<div id="results" class="mt-10 hidden space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-<div class="bg-black border border-zinc-700 rounded-2xl p-6">
+
+<button onclick="calculateCost()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-4 rounded-2xl text-lg mb-8 transition-colors">
+Calculate Accurate Cost
+</button>
+
+<div id="results" class="hidden space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">
 <div class="text-xs text-zinc-400">STARTER</div>
-<div id="starter-cost" class="text-3xl font-bold text-emerald-400 mt-1">$0</div>
+<div id="starter-cost" class="text-2xl font-bold text-emerald-400 mt-1"></div>
 </div>
-<div class="bg-black border-2 border-emerald-500 rounded-2xl p-6">
+<div class="bg-black border-2 border-emerald-500 rounded-2xl p-5 text-center">
 <div class="text-xs text-emerald-400">PRO (Recommended)</div>
-<div id="pro-cost" class="text-3xl font-bold text-white mt-1">$0</div>
+<div id="pro-cost" class="text-2xl font-bold text-white mt-1"></div>
 <div id="pro-savings" class="text-xs text-emerald-400 mt-1"></div>
 </div>
-<div class="bg-black border border-zinc-700 rounded-2xl p-6">
+<div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">
 <div class="text-xs text-zinc-400">ENTERPRISE</div>
-<div id="enterprise-cost" class="text-3xl font-bold text-emerald-400 mt-1">$0</div>
+<div id="enterprise-cost" class="text-2xl font-bold text-emerald-400 mt-1"></div>
 </div>
 </div>
-<div id="volume-note" class="text-center text-emerald-400 text-sm font-medium"></div>
-<p class="text-center text-sm text-zinc-500">* Annual contracts save 20%. Volume discounts applied automatically (10+ devices = 10% off, 25+ = 15% off). Final contract provided after payment.</p>
+<p class="text-center text-xs text-zinc-500 mt-4">Annual contracts save 20%. Volume discounts applied automatically.</p>
 </div>
 </div>
 </div>
+
 </div>
 </section>
 
@@ -219,108 +244,217 @@ window.addEventListener('load', initTailwind);
 
 <script src="script.js"></script>
 
-<!-- CONTRACTS + VOLUME SAVINGS + STRIPE SCRIPT -->
+<!-- COMPLETE WORKING SCRIPT -->
 <script>
-// === YOUR REAL STRIPE PAYMENT LINKS (now connected) ===
-let starterMonthlyLink = "https://buy.stripe.com/5kQeVe2bN9lu5XofXv0ZW00";
-let proMonthlyLink     = "https://buy.stripe.com/14A14o4jV8hqgC2eTr0ZW01";
-let enterpriseMonthlyLink = "https://buy.stripe.com/bJe5kE4jV1T2gC2aDb0ZW02";
+// === SERVICES DECK (Numbered + Typewriter) ===
+const services = [
+  { num: "01", title: "AI-Powered Application Control", text: "Machine learning continuously learns your environment and autonomously builds precise allowlists. Unknown and risky applications are blocked by default.", sub: "ThreatLocker’s intelligent engine stops living-off-the-land attacks in real time." },
+  { num: "02", title: "Intelligent Web & Network Control", text: "AI-driven web filtering and network segmentation that detects and blocks malicious domains, C2 traffic, and risky connections — even when threats are brand new.", sub: "Adaptive control that evolves with the threat landscape." },
+  { num: "03", title: "AI-Driven Data Protection", text: "Behavioral AI continuously monitors data flows and enforces intelligent ringfencing. Suspicious exfiltration attempts are detected and blocked before damage occurs.", sub: "Proactive defense that understands normal data behavior." },
+  { num: "04", title: "Autonomous Patch Management", text: "AI-powered patching and desired-state enforcement that predicts vulnerabilities and automatically deploys updates across 200+ applications.", sub: "Immy.bot’s intelligent engine reduces your attack surface automatically." },
+  { num: "05", title: "Intelligent Remote Access & Automation", text: "AI-assisted remote management and scripting with continuous behavioral monitoring. Every action is logged and enforced under strict Zero Trust policies.", sub: "Secure automation that gets smarter while maintaining full audit visibility." }
+];
 
-let starterAnnualLink  = "https://buy.stripe.com/cNi14o2bNfJS2Lc5iR0ZW03";
-let proAnnualLink      = "https://buy.stripe.com/dRmbJ26s39lu71s3aJ0ZW04";
-let enterpriseAnnualLink = "https://buy.stripe.com/eVq4gAcQr7dm1H8fXv0ZW05";
+let currentIndex = 0;
+let isTyping = false;
 
+function updateDeck() {
+  const s = services[currentIndex];
+  document.getElementById('card-number').textContent = s.num;
+  document.getElementById('card-title').textContent = s.title;
+  typeText('card-text', s.text);
+  document.getElementById('card-sub').textContent = s.sub;
+
+  const next = services[(currentIndex + 1) % services.length];
+  document.getElementById('peek-number').textContent = next.num;
+  document.getElementById('peek-title').textContent = next.title;
+  document.getElementById('peek-text').textContent = next.text.substring(0, 85) + "...";
+}
+
+function typeText(id, text) {
+  const el = document.getElementById(id);
+  el.textContent = '';
+  isTyping = true;
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+    } else {
+      clearInterval(interval);
+      isTyping = false;
+    }
+  }, 16);
+}
+
+function nextCard() { if (!isTyping) { currentIndex = (currentIndex + 1) % services.length; updateDeck(); } }
+function prevCard() { if (!isTyping) { currentIndex = (currentIndex - 1 + services.length) % services.length; updateDeck(); } }
+
+// Swipe
+let startX = 0;
+const cardEl = document.getElementById('active-card');
+cardEl.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+cardEl.addEventListener('touchend', e => {
+  const diff = startX - e.changedTouches[0].clientX;
+  if (diff > 60) nextCard();
+  if (diff < -60) prevCard();
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === "ArrowRight") nextCard();
+  if (e.key === "ArrowLeft") prevCard();
+});
+
+// === ACCURATE COST CALCULATOR ===
 let currentBillingCycle = 'monthly';
 
 function setBillingCycle(cycle) {
-    currentBillingCycle = cycle;
-    const monthlyBtn = document.getElementById('monthly-btn');
-    const annualBtn  = document.getElementById('annual-btn');
-    if (cycle === 'monthly') {
-        monthlyBtn.classList.add('bg-emerald-500', 'text-black');
-        annualBtn.classList.remove('bg-emerald-500', 'text-black');
-    } else {
-        annualBtn.classList.add('bg-emerald-500', 'text-black');
-        monthlyBtn.classList.remove('bg-emerald-500', 'text-black');
-    }
-    calculateCost();
+  currentBillingCycle = cycle;
+  const m = document.getElementById('monthly-btn');
+  const a = document.getElementById('annual-btn');
+  if (cycle === 'monthly') {
+    m.classList.add('bg-emerald-500', 'text-black');
+    a.classList.remove('bg-emerald-500', 'text-black');
+  } else {
+    a.classList.add('bg-emerald-500', 'text-black');
+    m.classList.remove('bg-emerald-500', 'text-black');
+  }
+  calculateCost();
 }
 
-function getVolumeDiscount(totalDevices) {
-    if (totalDevices >= 25) return 0.85;
-    if (totalDevices >= 10) return 0.90;
-    return 1.0;
+function getVolumeDiscount(total) {
+  if (total >= 25) return 0.85;
+  if (total >= 10) return 0.90;
+  return 1;
 }
 
 function calculateCost() {
-    const workstations = parseInt(document.getElementById('workstations').value) || 0;
-    const servers = parseInt(document.getElementById('servers').value) || 0;
-    const totalDevices = workstations + servers;
-    let discount = getVolumeDiscount(totalDevices);
-    
-    let starterBase = 50;
-    let proBase = 149;
-    let enterpriseBase = 199;
-    
-    if (currentBillingCycle === 'annual') {
-        starterBase *= 0.80;
-        proBase *= 0.80;
-        enterpriseBase *= 0.80;
-    }
-    
-    const starter = Math.round((workstations * starterBase + servers * (starterBase * 1.2)) * discount);
-    const pro     = Math.round((workstations * proBase     + servers * (proBase * 1.2))     * discount);
-    const enterprise = Math.round((workstations * enterpriseBase + servers * (enterpriseBase * 1.2)) * discount);
-    
-    document.getElementById('starter-price-display').textContent = '$' + Math.round(starterBase);
-    document.getElementById('pro-price-display').textContent     = '$' + Math.round(proBase);
-    document.getElementById('enterprise-price-display').textContent = '$' + Math.round(enterpriseBase);
-    
-    const labelText = currentBillingCycle === 'annual' ? '/workstation/yr (billed annually)' : '/workstation/mo billed monthly';
-    document.getElementById('starter-price-label').textContent = labelText;
-    document.getElementById('pro-price-label').textContent     = labelText;
-    document.getElementById('enterprise-price-label').textContent = labelText;
-    
-    document.getElementById('starter-cost').textContent = '$' + starter + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
-    document.getElementById('pro-cost').textContent     = '$' + pro     + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
-    document.getElementById('enterprise-cost').textContent = '$' + enterprise + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
-    
-    const savingsEl = document.getElementById('pro-savings');
-    const baseProMonthly = workstations * 149 + servers * 180;
-    const savingsAmount = Math.round(baseProMonthly - pro);
-    if (savingsAmount > 0) {
-        savingsEl.innerHTML = `✅ You save <span class="font-bold">$${savingsAmount}</span> with this contract`;
-    } else {
-        savingsEl.innerHTML = '';
-    }
-    
-    document.getElementById('volume-note').innerHTML = totalDevices >= 10 
-        ? `🚀 Volume discount applied – ${totalDevices} devices = bigger savings` 
-        : '';
-    
-    document.getElementById('results').classList.remove('hidden');
+  const ws = parseInt(document.getElementById('workstations').value) || 0;
+  const sv = parseInt(document.getElementById('servers').value) || 0;
+  const total = ws + sv;
+  const discount = getVolumeDiscount(total);
+
+  let starter = 50, pro = 75, enterprise = 100;
+
+  if (currentBillingCycle === 'annual') {
+    starter *= 0.8;
+    pro *= 0.8;
+    enterprise *= 0.8;
+  }
+
+  const starterTotal = Math.round((ws * starter + sv * (starter * 1.2)) * discount);
+  const proTotal = Math.round((ws * pro + sv * (pro * 1.2)) * discount);
+  const entTotal = Math.round((ws * enterprise + sv * (enterprise * 1.2)) * discount);
+
+  document.getElementById('starter-cost').textContent = '$' + starterTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
+  document.getElementById('pro-cost').textContent = '$' + proTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
+  document.getElementById('enterprise-cost').textContent = '$' + entTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
+
+  const savingsEl = document.getElementById('pro-savings');
+  if (currentBillingCycle === 'annual') {
+    const base = Math.round((ws * 75 + sv * 90) * discount);
+    const saved = base - proTotal;
+    savingsEl.innerHTML = saved > 0 ? `You save $${saved} with annual contract` : '';
+  } else {
+    savingsEl.innerHTML = '';
+  }
+
+  document.getElementById('results').classList.remove('hidden');
 }
 
-function subscribeToPlan(plan) {
-    const workstations = parseInt(document.getElementById('workstations').value) || 1;
-    let link = '';
-    if (plan === 'starter') link = currentBillingCycle === 'monthly' ? starterMonthlyLink : starterAnnualLink;
-    else if (plan === 'pro') link = currentBillingCycle === 'monthly' ? proMonthlyLink : proAnnualLink;
-    else if (plan === 'enterprise') link = currentBillingCycle === 'monthly' ? enterpriseMonthlyLink : enterpriseAnnualLink;
-    
-    if (link) {
-        const checkoutUrl = workstations > 0 ? `${link}?quantity=${workstations}` : link;
-        window.open(checkoutUrl, '_blank');
-    }
-}
-
-// Auto-calculate
 document.getElementById('workstations').addEventListener('input', calculateCost);
 document.getElementById('servers').addEventListener('input', calculateCost);
-window.addEventListener('load', () => {
-    setBillingCycle('monthly');
-    calculateCost();
-});
+
+// === WORKING MODAL + STRIPE ===
+let starterMonthlyLink = "https://buy.stripe.com/5kQeVe2bN9lu5XofXv0ZW00";
+let proMonthlyLink = "https://buy.stripe.com/14A14o4jV8hqgC2eTr0ZW01";
+let enterpriseMonthlyLink = "https://buy.stripe.com/bJe5kE4jV1T2gC2aDb0ZW02";
+let starterAnnualLink = "https://buy.stripe.com/cNi14o2bNfJS2Lc5iR0ZW03";
+let proAnnualLink = "https://buy.stripe.com/dRmbJ26s39lu71s3aJ0ZW04";
+let enterpriseAnnualLink = "https://buy.stripe.com/eVq4gAcQr7dm1H8fXv0ZW05";
+
+let pendingPlan = null;
+
+function showContractModal(plan) {
+  pendingPlan = plan;
+  document.getElementById('contract-modal').classList.remove('hidden');
+  document.getElementById('contract-modal').classList.add('flex');
+  document.getElementById('agree-checkbox').checked = false;
+  document.getElementById('accept-btn').disabled = true;
+}
+
+function declineContract() {
+  const modal = document.getElementById('contract-modal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+}
+
+function acceptAndSubscribe() {
+  if (!document.getElementById('agree-checkbox').checked) {
+    alert("Please agree to the Master Service Agreement to continue.");
+    return;
+  }
+  const modal = document.getElementById('contract-modal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+
+  const ws = parseInt(document.getElementById('workstations').value) || 1;
+  let link = '';
+  if (pendingPlan === 'starter') link = currentBillingCycle === 'monthly' ? starterMonthlyLink : starterAnnualLink;
+  else if (pendingPlan === 'pro') link = currentBillingCycle === 'monthly' ? proMonthlyLink : proAnnualLink;
+  else if (pendingPlan === 'enterprise') link = currentBillingCycle === 'monthly' ? enterpriseMonthlyLink : enterpriseAnnualLink;
+
+  if (link) {
+    window.open(`${link}?quantity=${ws}`, '_blank');
+  }
+}
+
+function initContractModal() {
+  const checkbox = document.getElementById('agree-checkbox');
+  const btn = document.getElementById('accept-btn');
+  checkbox.addEventListener('change', () => btn.disabled = !checkbox.checked);
+}
+
+// Init everything
+window.onload = () => {
+  updateDeck();
+  setBillingCycle('monthly');
+  calculateCost();
+  initContractModal();
+};
 </script>
+
+<!-- Contract Modal -->
+<div id="contract-modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[100]">
+<div class="bg-zinc-900 border border-emerald-500/60 rounded-3xl max-w-2xl w-full mx-4 p-8 md:p-10">
+<div class="flex items-center gap-3 mb-4">
+<div class="text-emerald-400">🛡️</div>
+<h3 class="text-2xl font-bold tracking-tight">Secure Contract Acceptance</h3>
+</div>
+<p class="text-emerald-400 text-sm font-mono mb-6">VSIT Solutions and More LLC — Official Master Service Agreement</p>
+
+<div class="bg-black/70 border border-zinc-700 rounded-2xl p-6 text-sm text-zinc-300 max-h-[280px] overflow-auto mb-6 space-y-4">
+<p><strong>1. Zero Trust Enforcement</strong><br>All services delivered under strict application allowlisting, ringfencing, and continuous monitoring.</p>
+<p><strong>2. Term & Billing</strong><br>Monthly or Annual contracts. Annual contracts receive 20% discount and are billed in full at commencement.</p>
+<p><strong>3. Cancellation</strong><br>30-day written notice. No refunds on annual contracts after commencement.</p>
+<p><strong>4. Liability</strong><br>VSIT Solutions and More LLC provides best-effort protection. Client remains responsible for data backups and internal policies.</p>
+<p><strong>5. Governing Law</strong><br>State of Florida. Disputes resolved in Orange County courts.</p>
+</div>
+
+<div class="mb-8 w-full">
+<label class="flex items-start gap-3 text-sm cursor-pointer w-full">
+<input type="checkbox" id="agree-checkbox" class="mt-1 accent-emerald-500 w-4 h-4 flex-shrink-0">
+<span class="text-zinc-300 flex-1">I have read, understand, and agree to the <strong>VSIT Solutions and More LLC Master Service Agreement</strong>, Service Level Agreement (SLA), and Acceptable Use Policy. This constitutes a legally binding contract upon successful payment.</span>
+</label>
+</div>
+
+<div class="flex flex-col sm:flex-row gap-4">
+<button onclick="declineContract()" class="flex-1 py-4 rounded-2xl border border-zinc-700 hover:bg-zinc-800 transition-colors font-medium">Decline</button>
+<button onclick="acceptAndSubscribe()" id="accept-btn" disabled class="flex-1 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-black font-semibold disabled:opacity-40 disabled:cursor-not-allowed transition-colors">Accept & Proceed to Secure Checkout</button>
+</div>
+<p class="text-center text-[10px] text-zinc-500 mt-6">Full MSA delivered in welcome packet after signup.</p>
+</div>
+</div>
+
 </body>
 </html>
