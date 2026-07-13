@@ -26,7 +26,6 @@ window.addEventListener('load', initTailwind);
 
 body { font-family: 'Inter', system_ui, sans-serif; }
 
-/* Hero Background Effects */
 .hero-stars {
 position: relative;
 overflow: hidden;
@@ -61,7 +60,6 @@ animation: nebula 35s ease infinite;
 @keyframes twinkle { 0%, 100% { opacity: 0.09; } 50% { opacity: 0.15; } }
 @keyframes nebula { 0%, 100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.06) rotate(1deg); } }
 
-/* Premium Logo */
 .logo-glow {
 filter: drop-shadow(0 0 20px rgb(16 185 129)) 
 drop-shadow(0 0 40px rgb(16 185 129 / 0.6))
@@ -80,7 +78,6 @@ filter: blur(12px);
 }
 .logo-container:hover img { transform: scale(1.03); }
 
-/* AI Typography */
 .ai-text {
 font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 letter-spacing: 0.6px;
@@ -113,10 +110,8 @@ letter-spacing: 0.6px;
 <div class="max-w-7xl mx-auto px-5 md:px-6 relative z-10">
 <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
 
-<!-- Left Content -->
 <div class="space-y-8 md:space-y-10 text-center md:text-left">
 
-<!-- AI Badge -->
 <div class="inline-flex items-center gap-3 bg-zinc-900/80 backdrop-blur-md border border-emerald-500/30 px-5 py-2.5 rounded-3xl mx-auto md:mx-0">
 <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
 <span class="uppercase tracking-[3px] text-emerald-400 font-mono text-xs md:text-sm font-semibold">ZERO TRUST AI ACTIVE</span>
@@ -127,15 +122,13 @@ Stop Cyber Attacks<br>
 <span class="text-emerald-400">Before They Start</span>
 </h1>
 
-<!-- PREMIUM AI SECURITY INTELLIGENCE -->
+<!-- AI Security Intelligence -->
 <div class="max-w-md mx-auto md:mx-0 mt-2">
 <div class="flex items-center gap-2 mb-1.5">
 <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-<span class="text-emerald-400 font-mono text-xs tracking-[2px] font-semibold"></span>
+<span class="text-emerald-400 font-mono text-xs tracking-[2px] font-semibold">AI SECURITY INTELLIGENCE</span>
 </div>
-<p id="ai-pulse-text" 
-class="ai-text text-emerald-300 text-[15px] md:text-base min-h-[26px] font-medium">
-</p>
+<p id="ai-pulse-text" class="ai-text text-emerald-300 text-[15px] md:text-base min-h-[26px] font-medium"></p>
 </div>
 
 <p class="text-lg md:text-xl text-zinc-300 max-w-md mx-auto md:mx-0 mt-4">
@@ -174,9 +167,70 @@ Book Demo
 <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-purple-500/5 pointer-events-none"></div>
 </header>
 
+<!-- SECURITY SCAN DEMO -->
+<section class="py-20 bg-zinc-950 border-t border-zinc-800">
+<div class="max-w-4xl mx-auto px-5 md:px-6">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold tracking-tight mb-3">Try Our AI Security Scanner</h2>
+<p class="text-zinc-400 max-w-md mx-auto">See how our Zero Trust AI engine analyzes code and URLs in real time.</p>
+</div>
+
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 md:p-10 max-w-3xl mx-auto">
+<div class="mb-6">
+<label class="block text-sm text-zinc-400 mb-2 font-medium">Paste suspicious code, script, or URL</label>
+<textarea id="scan-input" rows="6" 
+class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500 resize-y font-mono text-sm"
+placeholder="e.g. eval(atob('...')) or https://suspicious-link.com/login"></textarea>
+</div>
+
+<button onclick="runSecurityScan()" 
+class="w-full bg-emerald-500 hover:bg-emerald-400 transition-colors text-black font-semibold py-4 rounded-2xl text-lg flex items-center justify-center gap-2">
+<span id="scan-button-text">Run AI Security Scan</span>
+</button>
+
+<div id="scan-results" class="hidden mt-8">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+<span class="text-emerald-400 font-mono text-sm tracking-widest">AI ANALYSIS COMPLETE</span>
+</div>
+
+<div id="scan-output" class="ai-text bg-black border border-zinc-700 rounded-2xl p-6 text-sm leading-relaxed min-h-[120px]"></div>
+
+<div class="mt-4 text-xs text-zinc-500">
+This is a simulated demo. Real scans use ThreatLocker + custom AI models.
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TRUST SIGNALS -->
+<section class="py-16 border-t border-zinc-800">
+<div class="max-w-5xl mx-auto px-5 md:px-6 text-center">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+<div>
+<div class="text-emerald-400 text-2xl font-bold mb-1">2,847</div>
+<div class="text-zinc-400">Endpoints Protected</div>
+</div>
+<div>
+<div class="text-emerald-400 text-2xl font-bold mb-1">100%</div>
+<div class="text-zinc-400">Patch Compliance</div>
+</div>
+<div>
+<div class="text-emerald-400 text-2xl font-bold mb-1">0</div>
+<div class="text-zinc-400">Unknown Apps Allowed</div>
+</div>
+<div>
+<div class="text-emerald-400 text-2xl font-bold mb-1">47</div>
+<div class="text-zinc-400">Threats Blocked Today</div>
+</div>
+</div>
+</div>
+</section>
+
 <script src="script.js"></script>
 
-<!-- AI PULSE SCRIPT -->
+<!-- AI PULSE + SECURITY SCAN SCRIPT -->
 <script>
 const aiMessages = [
 "ThreatLocker AI: 0 unknown applications allowed in the last 24 hours.",
@@ -194,28 +248,62 @@ const text = aiMessages[currentIndex];
 element.textContent = '';
 
 let i = 0;
-const typingSpeed = 28;
-
 const interval = setInterval(() => {
 if (i < text.length) {
 element.textContent += text.charAt(i);
 i++;
 } else {
 clearInterval(interval);
-
-// Wait then move to next message
 setTimeout(() => {
 currentIndex = (currentIndex + 1) % aiMessages.length;
 typeAIPulse();
 }, 5200);
 }
-}, typingSpeed);
+}, 28);
 }
 
-// Start the AI effect
 window.onload = function() {
 typeAIPulse();
 };
+
+// Security Scan Demo
+function runSecurityScan() {
+const input = document.getElementById('scan-input').value.trim();
+const resultsDiv = document.getElementById('scan-results');
+const output = document.getElementById('scan-output');
+const buttonText = document.getElementById('scan-button-text');
+
+if (!input) {
+alert("Please enter some code or a URL to scan.");
+return;
+}
+
+buttonText.textContent = "Scanning...";
+resultsDiv.classList.add('hidden');
+
+setTimeout(() => {
+buttonText.textContent = "Run AI Security Scan";
+
+let analysis = "";
+const lowerInput = input.toLowerCase();
+
+if (lowerInput.includes("eval") || lowerInput.includes("atob") || lowerInput.includes("document.write")) {
+analysis = `⚠️ HIGH RISK DETECTED\n\nSuspicious obfuscated code patterns found (eval + base64 encoding).\n\nRecommendation: Block this behavior with ThreatLocker Application Control.`;
+} else if (lowerInput.includes("http") && (lowerInput.includes("login") || lowerInput.includes("verify"))) {
+analysis = `⚠️ MEDIUM RISK\n\nPotential phishing URL pattern detected.\n\nRecommendation: Add to Web & Network Control blocklist.`;
+} else if (lowerInput.length > 200) {
+analysis = `✅ LOW RISK\n\nNo obvious malicious patterns detected.\n\nAI analysis complete. Code appears clean.`;
+} else {
+analysis = `✅ CLEAN\n\nNo threats detected. Safe to allow under current Zero Trust policies.`;
+}
+
+output.innerHTML = analysis.replace(/\n/g, '<br>');
+resultsDiv.classList.remove('hidden');
+
+// Scroll to results
+resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}, 1400);
+}
 </script>
 
 </body>
