@@ -178,7 +178,7 @@ Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 round
 <h3 class="text-3xl font-bold mb-1">Essential Zero Trust</h3>
 <p class="text-zinc-400 mb-6">App Control & Ringfence Basic</p>
 <div class="mb-6">
-<span id="starter-price" class="text-5xl font-bold">$49</span>
+<span id="starter-price" class="text-5xl font-bold">$99</span>
 <span class="text-zinc-400">/workstation/mo</span>
 </div>
 <ul class="space-y-3 mb-8 text-sm flex-1">
@@ -199,7 +199,7 @@ Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 round
 <h3 class="text-3xl font-bold mb-1">Full Zero Trust</h3>
 <p class="text-zinc-400 mb-6">App Control, Ringfence + Network Control</p>
 <div class="mb-6">
-<span id="pro-price" class="text-5xl font-bold">$69</span>
+<span id="pro-price" class="text-5xl font-bold">$149</span>
 <span class="text-zinc-400">/workstation/mo</span>
 </div>
 <ul class="space-y-3 mb-8 text-sm flex-1">
@@ -218,7 +218,7 @@ Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 round
 <h3 class="text-3xl font-bold mb-1">Complete Protection</h3>
 <p class="text-zinc-400 mb-6">Full Stack + Managed Response</p>
 <div class="mb-6">
-<span id="enterprise-price" class="text-5xl font-bold">$99</span>
+<span id="enterprise-price" class="text-5xl font-bold">$199</span>
 <span class="text-zinc-400">/workstation/mo</span>
 </div>
 <ul class="space-y-3 mb-8 text-sm flex-1">
@@ -365,7 +365,7 @@ const sv = parseInt(document.getElementById('servers').value) || 0;
 const total = ws + sv;
 const discount = getVolumeDiscount(total);
 
-let starterBase = 49, proBase = 69, enterpriseBase = 99;
+let starterBase = 99, proBase = 149, enterpriseBase = 199;
 
 if (currentBillingCycle === 'annual') {
 starterBase *= 0.8;
@@ -389,7 +389,7 @@ document.getElementById('enterprise-cost').textContent = '$' + entTotal + (curre
 
 const savingsEl = document.getElementById('pro-savings');
 if (currentBillingCycle === 'annual') {
-const base = Math.round((ws * 69 + sv * 82.8) * discount);
+const base = Math.round((ws * 149 + sv * 178.8) * discount);
 const saved = base - proTotal;
 savingsEl.innerHTML = saved > 0 ? `You save $${saved} with annual contract` : '';
 } else {
