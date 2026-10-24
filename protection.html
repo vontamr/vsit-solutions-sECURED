@@ -178,8 +178,8 @@ Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 round
 <h3 class="text-3xl font-bold mb-1">Essential Zero Trust</h3>
 <p class="text-zinc-400 mb-6">App Control & Ringfence Basic</p>
 <div class="mb-6">
-<span id="starter-price" class="text-5xl font-bold">$99</span>
-<span class="text-zinc-400">/workstation/mo</span>
+<span id="starter-price" class="text-5xl font-bold">$1,485</span>
+<div class="text-sm text-zinc-400 mt-1">for <span id="starter-qty">15</span> devices • <span id="starter-per">$99</span>/ws/mo</div>
 </div>
 <ul class="space-y-3 mb-8 text-sm flex-1">
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Application Allowlisting (default-deny)</li>
@@ -199,8 +199,8 @@ Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 round
 <h3 class="text-3xl font-bold mb-1">Full Zero Trust</h3>
 <p class="text-zinc-400 mb-6">App Control, Ringfence + Network Control</p>
 <div class="mb-6">
-<span id="pro-price" class="text-5xl font-bold">$149</span>
-<span class="text-zinc-400">/workstation/mo</span>
+<span id="pro-price" class="text-5xl font-bold">$2,235</span>
+<div class="text-sm text-zinc-400 mt-1">for <span id="pro-qty">15</span> devices • <span id="pro-per">$149</span>/ws/mo</div>
 </div>
 <ul class="space-y-3 mb-8 text-sm flex-1">
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Starter</li>
@@ -218,8 +218,8 @@ Annual Contract <span class="text-xs bg-white text-emerald-500 px-3 py-0.5 round
 <h3 class="text-3xl font-bold mb-1">Complete Protection</h3>
 <p class="text-zinc-400 mb-6">Full Stack + Managed Response</p>
 <div class="mb-6">
-<span id="enterprise-price" class="text-5xl font-bold">$199</span>
-<span class="text-zinc-400">/workstation/mo</span>
+<span id="enterprise-price" class="text-5xl font-bold">$2,985</span>
+<div class="text-sm text-zinc-400 mt-1">for <span id="enterprise-qty">15</span> devices • <span id="enterprise-per">$199</span>/ws/mo</div>
 </div>
 <ul class="space-y-3 mb-8 text-sm flex-1">
 <li class="flex items-start gap-3"><span class="text-emerald-400">✓</span> Everything in Pro</li>
@@ -373,15 +373,23 @@ proBase *= 0.8;
 enterpriseBase *= 0.8;
 }
 
-// Live update prices on the cards
-document.getElementById('starter-price').textContent = '$' + Math.round(starterBase);
-document.getElementById('pro-price').textContent = '$' + Math.round(proBase);
-document.getElementById('enterprise-price').textContent = '$' + Math.round(enterpriseBase);
-
 // Calculate totals (servers at 1.2x)
 const starterTotal = Math.round((ws * starterBase + sv * (starterBase * 1.2)) * discount);
 const proTotal = Math.round((ws * proBase + sv * (proBase * 1.2)) * discount);
 const entTotal = Math.round((ws * enterpriseBase + sv * (enterpriseBase * 1.2)) * discount);
+
+// Live update big prices on the cards to show totals for selected quantity
+document.getElementById('starter-price').textContent = '$' + starterTotal.toLocaleString();
+document.getElementById('pro-price').textContent = '$' + proTotal.toLocaleString();
+document.getElementById('enterprise-price').textContent = '$' + entTotal.toLocaleString();
+
+// Update per-device rates and quantity labels
+document.getElementById('starter-per').textContent = '$' + Math.round(starterBase);
+document.getElementById('pro-per').textContent = '$' + Math.round(proBase);
+document.getElementById('enterprise-per').textContent = '$' + Math.round(enterpriseBase);
+document.getElementById('starter-qty').textContent = total;
+document.getElementById('pro-qty').textContent = total;
+document.getElementById('enterprise-qty').textContent = total;
 
 document.getElementById('starter-cost').textContent = '$' + starterTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
 document.getElementById('pro-cost').textContent = '$' + proTotal + (currentBillingCycle === 'annual' ? '/yr' : '/mo');
