@@ -3,8 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VSIT Secured | Zero Trust Cybersecurity</title>
-<meta name="description" content="Orlando-based Zero Trust protection powered by ThreatLocker and Immy.bot. Stop cyber attacks before they start.">
+<title>Zero Trust Cybersecurity & Agentic Bot Protection | VSIT Secured Orlando</title>
+<meta name="description" content="VSIT Secured is Orlando’s Zero Trust cybersecurity partner. Application control, ringfencing, endpoint firewall, and agentic AI bot protection powered by ThreatLocker. Stop ransomware, unauthorized apps, and rogue agents before they start.">
+<meta name="keywords" content="Zero Trust cybersecurity, application control, ThreatLocker partner, agentic bots protection, AI agent security, bot security, ransomware protection, endpoint firewall, ringfencing, Orlando cybersecurity, small business cyber protection, Zero Trust Orlando, cyber protection services">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Zero Trust Cybersecurity & Agentic Bot Protection | VSIT Secured">
+<meta property="og:description" content="Stop cyber attacks before they start. Official ThreatLocker partner for Zero Trust application control, ringfencing, and protection against rogue agentic AI bots.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zero Trust Cybersecurity & Agentic Bot Protection | VSIT Secured">
+<meta name="twitter:description" content="Orlando Zero Trust cybersecurity. Application control, ringfencing, and agentic AI bot protection powered by ThreatLocker.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "VSIT Secured",
+  "description": "Orlando-based Zero Trust cybersecurity and agentic AI bot protection powered by ThreatLocker. Application control, ringfencing, and endpoint firewall services.",
+  "areaServed": "Orlando, Florida",
+  "url": "https://vsitsecured.com",
+  "serviceType": ["Zero Trust Cybersecurity", "Application Control", "Agentic Bot Protection", "AI Agent Security", "Endpoint Firewall", "Ringfencing", "Ransomware Protection"]
+}
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script>
 function initTailwind() {
@@ -23,79 +43,86 @@ window.addEventListener('load', initTailwind);
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-body { font-family: 'Inter', system_ui, sans-serif; }
+body { 
+  font-family: 'Inter', system_ui, sans-serif;
+  background: #000;
+  margin: 0;
+}
 
 .hero-stars {
-position: relative;
-overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #000 url('galaxy-bg.jpg') center center / cover no-repeat;
 }
 .hero-stars::before {
-content: '';
-position: absolute;
-top: 0; left: 0;
-width: 100%; height: 100%;
-background:
-radial-gradient(circle, rgba(16, 185, 129, 0.7) 0.8px, transparent 0),
-radial-gradient(circle, rgba(134, 239, 172, 0.5) 0.6px, transparent 0);
-background-size: 80px 80px, 140px 140px;
-background-position: 0 0, 30px 50px;
-opacity: 0.09;
-animation: twinkle 12s linear infinite;
-pointer-events: none;
-z-index: 1;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(16,185,129,0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
 }
 .hero-stars::after {
-content: '';
-position: absolute;
-top: 0; left: 0;
-width: 100%; height: 100%;
-background:
-radial-gradient(ellipse at 20% 30%, rgba(16, 185, 129, 0.18) 0%, transparent 60%),
-radial-gradient(ellipse at 80% 70%, rgba(134, 239, 172, 0.12) 0%, transparent 60%);
-pointer-events: none;
-z-index: 2;
-animation: nebula 35s ease infinite;
+  display: none;
 }
-@keyframes twinkle { 0%, 100% { opacity: 0.09; } 50% { opacity: 0.15; } }
-@keyframes nebula { 0%, 100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.06) rotate(1deg); } }
+
+.hero-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+  position: relative;
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  .hero-content { padding: 2rem 1.5rem 3rem; }
+}
+.hero-text { max-width: 540px; }
+.hero-logo-wrap {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .hero-logo-wrap { justify-content: flex-end; }
+}
 
 .logo-glow {
-filter: drop-shadow(0 0 20px rgb(16 185 129))
-drop-shadow(0 0 40px rgb(16 185 129 / 0.6))
-drop-shadow(0 0 70px rgb(134 239 172 / 0.4));
-transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 0 24px rgb(16 185 129 / 0.7))
+          drop-shadow(0 0 48px rgb(16 185 129 / 0.4));
+  transition: all 0.6s ease;
 }
 .logo-container { position: relative; }
 .logo-container::before {
-content: '';
-position: absolute;
-inset: -40px;
-background: radial-gradient(circle, rgba(15, 23, 42, 0.92) 38%, transparent 78%);
-border-radius: 9999px;
-z-index: -1;
-filter: blur(12px);
+  content: '';
+  position: absolute;
+  inset: -50px;
+  background: radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%);
+  border-radius: 9999px;
+  z-index: -1;
+  filter: blur(20px);
 }
-.logo-container:hover img { transform: scale(1.03); }
+.logo-container:hover img { transform: scale(1.04); }
 
 .ai-text {
-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-letter-spacing: 0.6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.5px;
 }
 </style>
 </head>
 <body class="bg-black text-white font-sans">
 
 <!-- NAV -->
-<nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
+<nav class="bg-black/90 backdrop-blur-md border-b border-zinc-800 sticky top-0 z-50">
 <div class="max-w-7xl mx-auto px-5 md:px-6">
 <div class="flex items-center justify-between h-16">
-<!-- Logo -->
 <a href="index.html" class="flex items-center gap-2 group">
 <div class="text-3xl font-bold tracking-tighter text-emerald-400 group-hover:text-emerald-300 transition-colors">VSIT</div>
 <div class="text-zinc-400 text-xs md:text-sm font-mono tracking-widest leading-none">SECURED</div>
 </a>
 
-<!-- Desktop Menu -->
 <div class="hidden md:flex items-center gap-6 md:gap-8 text-sm font-medium">
 <a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
 <a href="protection.html" class="hover:text-emerald-400 transition-colors">Protection</a>
@@ -103,22 +130,17 @@ letter-spacing: 0.6px;
 <a href="https://calendly.com/vsitsecure/30min" target="_blank" class="hover:text-emerald-400 transition-colors">Contact</a>
 </div>
 
-<!-- Desktop CTA -->
 <a href="assessment.html" class="hidden md:block bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-2xl text-sm font-semibold transition-colors">
 Free Assessment
 </a>
 
-<!-- Mobile Hamburger Button -->
-<button id="hamburger-btn" 
-class="md:hidden flex items-center justify-center w-10 h-10 text-emerald-400 hover:text-emerald-300 transition-colors"
-aria-label="Toggle menu">
+<button id="hamburger-btn" class="md:hidden flex items-center justify-center w-10 h-10 text-emerald-400 hover:text-emerald-300 transition-colors" aria-label="Toggle menu">
 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 </svg>
 </button>
 </div>
 
-<!-- Mobile Menu -->
 <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-zinc-800 px-5 py-6">
 <div class="flex flex-col gap-4 text-sm font-medium">
 <a href="index.html" class="hover:text-emerald-400 transition-colors py-2">Home</a>
@@ -133,37 +155,33 @@ Free Assessment
 </nav>
 
 <!-- HERO -->
-<header class="min-h-screen hero-stars bg-black flex items-center relative overflow-hidden py-12 md:py-0">
-<div class="max-w-7xl mx-auto px-5 md:px-6 relative z-10">
+<header class="hero-stars relative overflow-hidden">
+<div class="hero-content">
 <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
 
-<div class="space-y-8 md:space-y-10 text-center md:text-left">
-
-<div class="inline-flex items-center gap-3 bg-zinc-900/80 backdrop-blur-md border border-emerald-500/30 px-5 py-2.5 rounded-3xl mx-auto md:mx-0">
+<div class="hero-text space-y-6 md:space-y-8 text-center md:text-left mx-auto md:mx-0">
+<div class="inline-flex items-center gap-3 bg-zinc-900/70 backdrop-blur-md border border-emerald-500/40 px-5 py-2.5 rounded-3xl">
 <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
-<span class="uppercase tracking-[3px] text-emerald-400 font-mono text-xs md:text-sm font-semibold">ZERO TRUST AI ACTIVE</span>
+<span class="uppercase tracking-[3px] text-emerald-400 font-mono text-xs md:text-sm font-semibold">ZERO TRUST ACTIVE</span>
 </div>
 
-<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-tighter">
+<h1 class="text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[0.95] tracking-tighter">
 Stop Cyber Attacks<br>
 <span class="text-emerald-400">Before They Start</span>
 </h1>
 
-<!-- AI Security Intelligence -->
-<div class="max-w-md mx-auto md:mx-0 mt-2">
-<div class="flex items-center gap-2 mb-1.5">
+<div class="mt-1">
+<div class="flex items-center gap-2 mb-1.5 justify-center md:justify-start">
 <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-<span class="text-emerald-400 font-mono text-xs tracking-[2px] font-semibold"></span>
 </div>
 <p id="ai-pulse-text" class="ai-text text-emerald-300 text-[15px] md:text-base min-h-[26px] font-medium"></p>
 </div>
 
-<p class="text-lg md:text-xl text-zinc-300 max-w-md mx-auto md:mx-0 mt-4">
-Orlando-based Zero Trust cybersecurity and advanced IT management<br>
-powered by <strong class="text-emerald-400">ThreatLocker</strong> + <strong class="text-emerald-400">Immy.bot</strong>.
+<p class="text-lg md:text-xl text-zinc-300 leading-relaxed">
+Orlando-based Zero Trust cybersecurity and advanced IT management powered by <strong class="text-emerald-400">ThreatLocker</strong>. Protect against ransomware, unauthorized apps, and rogue agentic bots.
 </p>
 
-<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-6">
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
 <a href="assessment.html" class="bg-emerald-500 hover:bg-emerald-400 transition-colors text-black font-semibold px-8 py-4 rounded-2xl text-base md:text-lg flex items-center justify-center gap-3">
 Get Free Security Assessment <span class="text-2xl leading-none">→</span>
 </a>
@@ -172,27 +190,119 @@ Book Demo
 </a>
 </div>
 
-<div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-zinc-400 mt-6">
+<div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-sm text-zinc-400 pt-1">
 <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Official ThreatLocker Partner</div>
-<div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Official Immy.bot Partner</div>
 <div>VSIT Solutions and More LLC • Orlando, FL</div>
 </div>
 </div>
 
-<!-- Logo -->
-<div class="flex justify-center md:justify-end pt-8 md:pt-0">
-<div class="logo-container relative w-72 h-72 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[440px] lg:h-[440px] flex items-center justify-center">
-<img src="mainlogo2.jpg" alt="VSIT Secured" class="w-full h-auto logo-glow">
-<div class="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-transparent rounded-full pointer-events-none"></div>
-<div class="absolute inset-0 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"></div>
+<div class="hero-logo-wrap pt-6 md:pt-0">
+<div class="logo-container relative w-64 h-64 sm:w-72 sm:h-72 md:w-[360px] md:h-[360px] lg:w-[420px] lg:h-[420px] flex items-center justify-center">
+<img src="mainlogo2.png" alt="VSIT Secured" class="w-full h-auto logo-glow">
 </div>
 </div>
 
 </div>
 </div>
-
-<div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-purple-500/5 pointer-events-none"></div>
 </header>
+
+<!-- SERVICES -->
+<section class="py-20 bg-zinc-950 border-t border-zinc-800">
+<div class="max-w-7xl mx-auto px-5 md:px-6">
+<div class="text-center mb-14">
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Zero Trust Cybersecurity Services</h2>
+<p class="text-zinc-400 max-w-2xl mx-auto text-lg">Official ThreatLocker partner delivering application control, ringfencing, and network protection that stops attacks before they execute.</p>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-colors">
+<div class="text-3xl mb-4">🔒</div>
+<h3 class="text-xl font-semibold mb-2">Application Control</h3>
+<p class="text-zinc-400 text-sm">Allow only trusted applications to run. Block unknown and malicious software by default — the foundation of Zero Trust.</p>
+</div>
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-colors">
+<div class="text-3xl mb-4">🛡️</div>
+<h3 class="text-xl font-semibold mb-2">Ringfencing & Storage Control</h3>
+<p class="text-zinc-400 text-sm">Prevent applications from accessing unauthorized data or network resources. Stop data exfiltration and living-off-the-land attacks.</p>
+</div>
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-colors">
+<div class="text-3xl mb-4">🌐</div>
+<h3 class="text-xl font-semibold mb-2">Web & Network Control</h3>
+<p class="text-zinc-400 text-sm">Granular website filtering and Zero Trust Endpoint Firewall. Block malicious domains, C2 traffic, and risky connections.</p>
+</div>
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-colors">
+<div class="text-3xl mb-4">🤖</div>
+<h3 class="text-xl font-semibold mb-2">AI Agent & Bot Protection</h3>
+<p class="text-zinc-400 text-sm">Control which AI agents, automation bots, and scripts can run. Prevent unauthorized AI tools from accessing systems or data.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- AGENTIC THREAT MONITOR -->
+<section class="py-20 bg-black border-t border-zinc-800 relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background: radial-gradient(ellipse at 50% 0%, rgba(16,185,129,0.15) 0%, transparent 60%);"></div>
+<div class="max-w-5xl mx-auto px-5 md:px-6 relative z-10">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-zinc-900/80 border border-emerald-500/30 px-4 py-1.5 rounded-full mb-4">
+<div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+<span class="text-emerald-400 font-mono text-xs tracking-widest">LIVE THREAT SURFACE</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-3">Agentic Bots Don't Get Through</h2>
+<p class="text-zinc-400 max-w-xl mx-auto">Zero Trust doesn't care how smart the agent is. If it isn't explicitly allowed, it doesn't run.</p>
+</div>
+
+<div class="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl">
+<div class="flex items-center gap-2 px-5 py-3 bg-zinc-900 border-b border-zinc-800">
+<div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+<div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+<span class="ml-3 text-xs font-mono text-zinc-500">vsit-secured · threat-monitor</span>
+</div>
+<div class="p-6 md:p-8 font-mono text-sm leading-relaxed space-y-4">
+<div class="text-zinc-500">// scanning for autonomous agents...</div>
+<div class="flex items-start gap-3">
+<span class="text-red-400">BLOCKED</span>
+<span class="text-zinc-300">agentic-bot.exe <span class="text-zinc-500">→ unauthorized autonomous process</span></span>
+</div>
+<div class="flex items-start gap-3">
+<span class="text-red-400">BLOCKED</span>
+<span class="text-zinc-300">rogue-llm-script.py <span class="text-zinc-500">→ unapproved AI tool</span></span>
+</div>
+<div class="flex items-start gap-3">
+<span class="text-red-400">BLOCKED</span>
+<span class="text-zinc-300">automation-bot.ps1 <span class="text-zinc-500">→ elevated access denied</span></span>
+</div>
+<div class="flex items-start gap-3">
+<span class="text-emerald-400">ALLOWED</span>
+<span class="text-zinc-300">approved-agent.service <span class="text-zinc-500">→ ringfenced, audited</span></span>
+</div>
+<div class="pt-3 border-t border-zinc-800 text-zinc-500">
+Default-deny active · Ringfencing enforced · Every action logged
+</div>
+</div>
+</div>
+
+<div class="grid md:grid-cols-3 gap-4 mt-8 text-center">
+<div class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5">
+<div class="text-emerald-400 text-2xl font-bold mb-1">Default-Deny</div>
+<div class="text-xs text-zinc-400">Only approved processes run</div>
+</div>
+<div class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5">
+<div class="text-emerald-400 text-2xl font-bold mb-1">Ringfenced</div>
+<div class="text-xs text-zinc-400">Agents can't reach what they shouldn't</div>
+</div>
+<div class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5">
+<div class="text-emerald-400 text-2xl font-bold mb-1">Full Audit</div>
+<div class="text-xs text-zinc-400">Every allowed action is recorded</div>
+</div>
+</div>
+
+<div class="text-center mt-10">
+<a href="protection.html" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl transition-colors">See How We Protect</a>
+</div>
+</div>
+</section>
 
 <!-- SECURITY SCAN DEMO -->
 <section class="py-20 bg-zinc-950 border-t border-zinc-800">
@@ -211,7 +321,7 @@ placeholder="e.g. eval(atob('...')) or https://suspicious-link.com/login"></text
 </div>
 
 <button onclick="runSecurityScan()"
-class="w-full bg-emerald-500 hover:bg-emerald-400 transition-colors text-black font-semibold py-4 rounded-2xl text-lg flex items-center justify-center gap-2">
+class="w-full bg-emerald-500 hover:bg-emerald-400 transition-colors text-black font-semibold py-4 rounded-2xl text-lg">
 <span id="scan-button-text">Run AI Security Scan</span>
 </button>
 
@@ -230,7 +340,7 @@ This is a simulated demo. Real scans use ThreatLocker + custom AI models.
 </section>
 
 <!-- TRUST SIGNALS -->
-<section class="py-16 border-t border-zinc-800">
+<section class="py-16 border-t border-zinc-800 bg-black">
 <div class="max-w-5xl mx-auto px-5 md:px-6 text-center">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
 <div>
@@ -255,20 +365,20 @@ This is a simulated demo. Real scans use ThreatLocker + custom AI models.
 
 <script src="script.js"></script>
 
-<!-- AI PULSE + SECURITY SCAN + HAMBURGER SCRIPT -->
 <script>
 const aiMessages = [
 "ThreatLocker AI: 0 unknown applications allowed in the last 24 hours.",
-"Immy.bot has maintained 100% patch compliance across all clients.",
 "Zero Trust engine actively monitoring 2,847 endpoints right now.",
 "AI has blocked 47 suspicious behaviors in the last hour.",
-"Full application control active. No living-off-the-land attacks detected."
+"Full application control active. No living-off-the-land attacks detected.",
+"Application allowlisting and ringfencing enforcing Zero Trust across all clients."
 ];
 
 let currentIndex = 0;
 
 function typeAIPulse() {
 const element = document.getElementById('ai-pulse-text');
+if (!element) return;
 const text = aiMessages[currentIndex];
 element.textContent = '';
 
@@ -287,7 +397,6 @@ typeAIPulse();
 }, 28);
 }
 
-// Security Scan Demo
 function runSecurityScan() {
 const input = document.getElementById('scan-input').value.trim();
 const resultsDiv = document.getElementById('scan-results');
@@ -324,23 +433,22 @@ resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }, 1400);
 }
 
-// Mobile Hamburger Menu
 function initMobileMenu() {
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 
+if (hamburgerBtn && mobileMenu) {
 hamburgerBtn.addEventListener('click', () => {
 mobileMenu.classList.toggle('hidden');
 });
 
-
-// Close mobile menu when clicking a link
 const mobileLinks = mobileMenu.querySelectorAll('a');
 mobileLinks.forEach(link => {
 link.addEventListener('click', () => {
 mobileMenu.classList.add('hidden');
 });
 });
+}
 }
 
 window.onload = function() {
