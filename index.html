@@ -110,6 +110,34 @@ body {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   letter-spacing: 0.5px;
 }
+
+/* AI Sync pulse for agent rows */
+@keyframes agentSync {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(16,185,129,0.04); }
+}
+@keyframes badgeSync {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+  50% { transform: scale(1.08); box-shadow: 0 0 12px 0 rgba(16,185,129,0.35); }
+}
+.agent-row {
+  animation: agentSync 5s ease-in-out infinite;
+}
+.agent-row:nth-child(1) { animation-delay: 0s; }
+.agent-row:nth-child(2) { animation-delay: 0.5s; }
+.agent-row:nth-child(3) { animation-delay: 1s; }
+.agent-row:nth-child(4) { animation-delay: 1.5s; }
+.agent-row:nth-child(5) { animation-delay: 2s; }
+.agent-row:nth-child(6) { animation-delay: 2.5s; }
+.agent-badge {
+  animation: badgeSync 5s ease-in-out infinite;
+}
+.agent-row:nth-child(1) .agent-badge { animation-delay: 0s; }
+.agent-row:nth-child(2) .agent-badge { animation-delay: 0.5s; }
+.agent-row:nth-child(3) .agent-badge { animation-delay: 1s; }
+.agent-row:nth-child(4) .agent-badge { animation-delay: 1.5s; }
+.agent-row:nth-child(5) .agent-badge { animation-delay: 2s; }
+.agent-row:nth-child(6) .agent-badge { animation-delay: 2.5s; }
 </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -206,35 +234,81 @@ Book Demo
 </div>
 </header>
 
-<!-- SERVICES -->
-<section class="py-20 bg-zinc-950 border-t border-zinc-800">
-<div class="max-w-7xl mx-auto px-5 md:px-6">
-<div class="text-center mb-14">
-<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Zero Trust Cybersecurity Services</h2>
-<p class="text-zinc-400 max-w-2xl mx-auto text-lg">Official ThreatLocker partner delivering application control, ringfencing, and network protection that stops attacks before they execute.</p>
+<!-- SERVICES - DISTINCTIVE AGENT MESH -->
+<section class="py-24 bg-black border-t border-zinc-800 relative overflow-hidden">
+<div class="absolute inset-0 opacity-25 pointer-events-none" style="background: radial-gradient(ellipse at 70% 30%, rgba(16,185,129,0.1) 0%, transparent 55%);"></div>
+<div class="max-w-5xl mx-auto px-5 md:px-6 relative z-10">
+<div class="mb-12">
+<div class="inline-flex items-center gap-2 bg-zinc-900/70 border border-emerald-500/30 px-4 py-1.5 rounded-full mb-5">
+<div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+<span class="text-emerald-400 font-mono text-xs tracking-widest">PROTECTION AGENTS ACTIVE</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-3">Zero Trust Protection Controls</h2>
+<p class="text-zinc-400 max-w-2xl text-lg">Each control is enforced under Zero Trust policy. They block unauthorized activity, limit access, and give you visibility — with 24/7 support available.</p>
 </div>
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-colors">
-<div class="text-3xl mb-4">🔒</div>
-<h3 class="text-xl font-semibold mb-2">Application Control</h3>
-<p class="text-zinc-400 text-sm">Allow only trusted applications to run. Block unknown and malicious software by default — the foundation of Zero Trust.</p>
+<div class="relative border border-zinc-800 rounded-3xl overflow-hidden bg-zinc-950/60">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-500 via-emerald-400/40 to-transparent"></div>
+<div class="divide-y divide-zinc-800">
+<div class="agent-row group flex items-start gap-5 px-6 py-6 hover:bg-zinc-900/40 transition-colors">
+<div class="agent-badge shrink-0 w-10 h-10 rounded-full border border-emerald-500/50 bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-mono text-xs font-bold">01</div>
+<div class="flex-1 min-w-0">
+<div class="text-emerald-400 font-mono text-xs tracking-widest mb-1">AGENT · ALLOWLIST</div>
+<h3 class="text-lg font-semibold mb-1">Application Control</h3>
+<p class="text-zinc-400 text-sm">Only approved applications run. Everything else is denied by default.</p>
 </div>
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-colors">
-<div class="text-3xl mb-4">🛡️</div>
-<h3 class="text-xl font-semibold mb-2">Ringfencing & Storage Control</h3>
-<p class="text-zinc-400 text-sm">Prevent applications from accessing unauthorized data or network resources. Stop data exfiltration and living-off-the-land attacks.</p>
+<div class="hidden sm:block text-emerald-500/60 font-mono text-xs pt-1">SYNC</div>
 </div>
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-colors">
-<div class="text-3xl mb-4">🌐</div>
-<h3 class="text-xl font-semibold mb-2">Web & Network Control</h3>
-<p class="text-zinc-400 text-sm">Granular website filtering and Zero Trust Endpoint Firewall. Block malicious domains, C2 traffic, and risky connections.</p>
+<div class="agent-row group flex items-start gap-5 px-6 py-6 hover:bg-zinc-900/40 transition-colors">
+<div class="agent-badge shrink-0 w-10 h-10 rounded-full border border-emerald-500/50 bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-mono text-xs font-bold">02</div>
+<div class="flex-1 min-w-0">
+<div class="text-emerald-400 font-mono text-xs tracking-widest mb-1">AGENT · RINGFENCE</div>
+<h3 class="text-lg font-semibold mb-1">Ringfencing & Storage</h3>
+<p class="text-zinc-400 text-sm">Limit what processes can access. Stop data exfiltration and living-off-the-land attacks.</p>
 </div>
-<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 hover:border-emerald-500/50 transition-colors">
-<div class="text-3xl mb-4">🤖</div>
-<h3 class="text-xl font-semibold mb-2">AI Agent & Bot Protection</h3>
-<p class="text-zinc-400 text-sm">Control which AI agents, automation bots, and scripts can run. Prevent unauthorized AI tools from accessing systems or data.</p>
+<div class="hidden sm:block text-emerald-500/60 font-mono text-xs pt-1">SYNC</div>
 </div>
+<div class="agent-row group flex items-start gap-5 px-6 py-6 hover:bg-zinc-900/40 transition-colors">
+<div class="agent-badge shrink-0 w-10 h-10 rounded-full border border-emerald-500/50 bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-mono text-xs font-bold">03</div>
+<div class="flex-1 min-w-0">
+<div class="text-emerald-400 font-mono text-xs tracking-widest mb-1">AGENT · NETWORK</div>
+<h3 class="text-lg font-semibold mb-1">Web & Network Control</h3>
+<p class="text-zinc-400 text-sm">Zero Trust Endpoint Firewall and web filtering. Block C2 and risky connections.</p>
+</div>
+<div class="hidden sm:block text-emerald-500/60 font-mono text-xs pt-1">SYNC</div>
+</div>
+<div class="agent-row group flex items-start gap-5 px-6 py-6 hover:bg-zinc-900/40 transition-colors">
+<div class="agent-badge shrink-0 w-10 h-10 rounded-full border border-emerald-500/50 bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-mono text-xs font-bold">04</div>
+<div class="flex-1 min-w-0">
+<div class="text-emerald-400 font-mono text-xs tracking-widest mb-1">AGENT · BOT GUARD</div>
+<h3 class="text-lg font-semibold mb-1">AI Agent & Bot Protection</h3>
+<p class="text-zinc-400 text-sm">Unauthorized agentic bots and scripts are blocked until explicitly allowed.</p>
+</div>
+<div class="hidden sm:block text-emerald-500/60 font-mono text-xs pt-1">SYNC</div>
+</div>
+<div class="agent-row group flex items-start gap-5 px-6 py-6 hover:bg-zinc-900/40 transition-colors">
+<div class="agent-badge shrink-0 w-10 h-10 rounded-full border border-emerald-500/50 bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-mono text-xs font-bold">05</div>
+<div class="flex-1 min-w-0">
+<div class="text-emerald-400 font-mono text-xs tracking-widest mb-1">AGENT · PATCH</div>
+<h3 class="text-lg font-semibold mb-1">Patch Management</h3>
+<p class="text-zinc-400 text-sm">Policy-driven updates under Zero Trust oversight. Shrink the attack surface.</p>
+</div>
+<div class="hidden sm:block text-emerald-500/60 font-mono text-xs pt-1">SYNC</div>
+</div>
+<div class="agent-row group flex items-start gap-5 px-6 py-6 hover:bg-zinc-900/40 transition-colors">
+<div class="agent-badge shrink-0 w-10 h-10 rounded-full border border-emerald-500/50 bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-mono text-xs font-bold">06</div>
+<div class="flex-1 min-w-0">
+<div class="text-emerald-400 font-mono text-xs tracking-widest mb-1">AGENT · SUPPORT</div>
+<h3 class="text-lg font-semibold mb-1">24/7 Response</h3>
+<p class="text-zinc-400 text-sm">Continuous monitoring and emergency response. We are on when you need us.</p>
+</div>
+<div class="hidden sm:block text-emerald-500/60 font-mono text-xs pt-1">SYNC</div>
+</div>
+</div>
+</div>
+
+<div class="mt-10">
+<a href="protection.html" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl transition-colors">View Protection Plans</a>
 </div>
 </div>
 </section>
